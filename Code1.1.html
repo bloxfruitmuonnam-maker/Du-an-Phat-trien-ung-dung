@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportX - Bứt Phá Giới Hạn | Đồ Thể Thao Cao Cấp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. RESET & VARIABLE CSS --- */
+        :root {
+            --primary-color: #ff4a00; /* Cam neon năng động */
+            --dark-color: #111111;    /* Đen chủ đạo */
+            --light-bg: #f5f5f7;      /* Nền xám nhẹ cho khối sản phẩm */
+            --white: #ffffff;
+            --text-color: #333333;
+            --text-muted: #777777;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- 2. HEADER & NAVIGATION --- */
+        header {
+            background-color: var(--dark-color);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            flex: 0 1 500px;
+            position: relative;
+            margin: 0 20px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 45px 10px 20px;
+            border-radius: 25px;
+            border: none;
+            background-color: #222;
+            color: var(--white);
+            outline: none;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Nav menu */
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            padding: 12px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* --- 3. HERO SECTION --- */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1920') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content span {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* --- 4. CATEGORIES BANNER --- */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 11fr);
+            gap: 20px;
+        }
+
+        .category-item {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .category-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .category-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            color: var(--white);
+        }
+
+        .category-overlay h3 {
+            font-size: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .category-overlay span {
+            font-size: 13px;
+            color: #ccc;
+            text-transform: uppercase;
+        }
+
+        .category-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- 5. FEATURED PRODUCTS --- */
+        .bg-light {
+            background-color: var(--light-bg);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border: 1px solid #e5e5e5;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+
+        .product-img {
+            height: 280px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-cat {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            height: 44px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-rating {
+            color: #ffcc00;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .product-rating span {
+            color: var(--text-muted);
+            margin-left: 5px;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .product-price {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--dark-color);
+        }
+
+        .add-to-cart-btn {
+            background-color: var(--dark-color);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* --- 6. FOOTER --- */
+        footer {
+            background-color: var(--dark-color);
+            color: #bbb;
+            padding-top: 60px;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #222;
+        }
+
+        .footer-logo {
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .footer-col ul li a {
+            transition: var(--transition);
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background-color: #222;
+            color: var(--white);
+            outline: none;
+        }
+
+        .newsletter-form button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            background-color: #222;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 13px;
+        }
+
+        /* --- 7. RESPONSIVE (MEDIA QUERIES) --- */
+        @media (max-width: 992px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .search-bar {
+                order: 3;
+                flex: 1 1 100%;
+                margin: 0;
+            }
+            .main-nav {
+                display: none; /* Trong thực tế sẽ dùng JS để toggle class show menu */
+            }
+            .menu-toggle {
+                display: block;
+                order: 1;
+                margin-right: 15px;
+            }
+            .header-actions {
+                order: 2;
+            }
+            .hero-content h1 {
+                font-size: 38px;
+            }
+            .section-padding {
+                padding: 50px 0;
+            }
+        }
+
+        @media (max-width: 48px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <div class="logo">
+                    <a href="#">SPORT<span>X</span></a>
+                </div>
+
+                <div class="search-bar">
+                    <form action="#">
+                        <input type="text" placeholder="Tìm kiếm giày chạy bộ, áo tập gym...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="header-actions">
+                    <a href="#" title="Tài khoản"><i class="far fa-user" style="font-size: 20px;"></i></a>
+                    <div class="cart-icon" title="Giỏ hàng">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">3</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Nam</a></li>
+                    <li><a href="#">Nữ</a></li>
+                    <li><a href="#">Phụ kiện</a></li>
+                    <li><a href="#" style="color: #ffcc00;"><i class="fas fa-fire"></i> Giảm giá</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span>Bộ Sưu Tập Mới Nhất 2026</span>
+                    <h1>BỨT PHÁ <br>MỌI GIỚI HẠN</h1>
+                    <p style="margin-bottom: 30px; color: #ddd;">Dòng sản phẩm hỗ trợ hiệu suất cao dành riêng cho các vận động viên chuyên nghiệp.</p>
+                    <a href="#" class="btn">Mua ngay <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Danh mục thể thao</h2>
+                <div class="category-grid">
+                    <div class="category-item">
+                        <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=600" alt="Chạy bộ">
+                        <div class="category-overlay">
+                            <h3>Chạy Bộ</h3>
+                            <span>50+ Sản phẩm</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600" alt="Gym">
+                        <div class="category-overlay">
+                            <h3>Tập Gym</h3>
+                            <span>80+ Sản phẩm</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600" alt="Bóng đá">
+                        <div class="category-overlay">
+                            <h3>Bóng Đá</h3>
+                            <span>45+ Sản phẩm</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600" alt="Yoga">
+                        <div class="category-overlay">
+                            <h3>Yoga</h3>
+                            <span>30+ Sản phẩm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title">Sản phẩm nổi bật</h2>
+                
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-badge">New</div>
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500" alt="Giày chạy bộ">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-cat">Chạy bộ</div>
+                            <h3 class="product-title"><a href="#">Giày Chạy Bộ Performance Air Max Pro X</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(45)</span>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-price">2.450.000đ</div>
+                                <button class="add-to-cart-btn" title="Thêm vào giỏ"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-badge">-20%</div>
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=500" alt="Áo thun thể thao">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-cat">Tập Gym</div>
+                            <h3 class="product-title"><a href="#">Áo Thun Thể Thao Ultra-Dry Thoáng Khí</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(12)</span>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-price" style="color: var(--primary-color);">480.000đ</div>
+                                <button class="add-to-cart-btn" title="Thêm vào giỏ"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=500" alt="Quần short thể thao">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-cat">Bóng đá</div>
+                            <h3 class="product-title"><a href="#">Quần Short Bóng Đá Câu Lạc Bộ Pro 2026</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(31)</span>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-price">350.000đ</div>
+                                <button class="add-to-cart-btn" title="Thêm vào giỏ"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-badge">Hot</div>
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?q=80&w=500" alt="Thảm tập yoga">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-cat">Yoga</div>
+                            <h3 class="product-title"><a href="#">Thảm Tập Yoga TPE Chống Trượt Cao Cấp 8mm</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(89)</span>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-price">650.000đ</div>
+                                <button class="add-to-cart-btn" title="Thêm vào giỏ"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">SPORT<span>X</span></div>
+                    <p style="line-height: 1.6; margin-bottom: 15px;">Hệ thống phân phối đồ thể thao chính hãng hàng đầu Việt Nam. Mang lại trải nghiệm tập luyện tuyệt vời nhất.</p>
+                    <p><i class="fas fa-phone-alt" style="color: var(--primary-color); margin-right: 8px;"></i> Hotline: 1900 xxxx</p>
+                    <p><i class="fas fa-envelope" style="color: var(--primary-color); margin-right: 8px;"></i> Email: contact@sportx.com</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Chính sách</h4>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách đổi trả 30 ngày</a></li>
+                        <li><a href="#">Chính sách giao hàng nhanh</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn chọn Size</a></li>
+                        <li><a href="#">Hệ thống cửa hàng</a></li>
+                        <li><a href="#">Liên hệ góp ý</a></li>
+                        <li><a href="#">Trở thành đối tác</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Đăng ký nhận tin</h4>
+                    <p>Nhận ngay voucher giảm giá 10% cho đơn hàng đầu tiên của bạn.</p>
+                    <form class="newsletter-form" action="#">
+                        <input type="email" placeholder="Nhập email của bạn..." required>
+                        <button type="submit">GỬI</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 SPORTX. Thiết kế bởi UI/UX Chuyên Nghiệp. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
