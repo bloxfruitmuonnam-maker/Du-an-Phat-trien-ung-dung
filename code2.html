@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SportZone - Cửa hàng cung cấp đồ thể thao, giày chạy bộ và phụ kiện cao cấp chuẩn SEO, tối ưu trải nghiệm người dùng.">
+    <meta name="keywords" content="đồ thể thao, giày chạy bộ, quần áo tập gym, sportzone, thời trang thể thao chính hãng">
+    <title>SportZone | Siêu Thị Đồ Thể Thao Cao Cấp & Phụ Kiện Chính Hãng</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .js-storage-alert { color: var(--color-danger); font-weight: bold; }
+        /* ==========================================================================
+   CSS NĂNG CAO: CUSTOM PROPERTIES (BIẾN CSS)
+   ========================================================================== */
+:root {
+    /* Token Hệ thống màu sắc */
+    --color-primary: #ff4757;
+    --color-primary-hover: #e84118;
+    --color-dark: #2f3542;
+    --color-dark-muted: #1e222b;
+    --color-light: #f8f9fa;
+    --color-white: #ffffff;
+    --color-gray: #747d8c;
+    --color-border: #e1e8ed;
+    --color-danger: rgb(235, 94, 85);
+    
+    /* Token Phông chữ & Chuyển động mượt mà */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+}
+
+/* ==========================================================================
+   CSS CƠ BẢN: BOX MODEL RESET & THIẾT LẬP CHUNG
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Kích thước thực tế cố định = Content + Padding + Border */
+}
+
+html {
+    font-size: 16px; /* Điểm neo chuẩn: 1rem = 16px */
+    scroll-behavior: smooth;
+    font-family: var(--font-main);
+}
+
+body {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Định dạng kiểu chữ và căn chỉnh văn bản */
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+a {
+    text-decoration: none; /* Loại bỏ gạch chân mặc định của trình duyệt */
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+img {
+    max-width: 100%; /* Đảm bảo hình ảnh co giãn đáp ứng (Responsive) tốt */
+    height: auto;
+    display: block;
+}
+
+/* Cấu trúc Layout khung chứa chính */
+.container {
+    width: 100%;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1200px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    font-size: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   KIẾN TRÚC CODE HOÀN CHỈNH THEO PHƯƠNG PHÁP BEM (Block__Element--Modifier)
+   ========================================================================== */
+
+/* --- COMPONENT ĐỘC LẬP: BUTTONS --- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: var(--border-radius-sm);
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-smooth);
+}
+
+.btn--primary {
+    background-color: var(--color-primary) !important; /* !important minh họa mức độ ưu tiên tuyệt đối */
+    color: var(--color-white);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-primary-hover) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+}
+
+.btn--dark {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.btn--dark:hover {
+    background-color: var(--color-primary);
+}
+
+/* --- BLOCK: HEADER --- */
+.header {
+    background-color: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky; /* CSS Trung cấp: Định vị Sticky dính cố định khi cuộn chuột */
+    top: 0;
+    z-index: 1000;
+    width: 100vw;
+}
+
+.header__container {
+    display: flex; /* CSS Trung cấp: Căn chỉnh layout một chiều linh hoạt với Flexbox */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.header__logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.header__logo--highlight {
+    color: var(--color-primary);
+}
+
+.header__search-form {
+    display: flex;
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--color-light);
+    order: 3; /* Thay đổi thứ tự hiển thị linh hoạt trên thiết bị di động màn hình nhỏ */
+}
+
+.header__search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0.5rem 1rem;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.header__search-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logic Checkbox Hack tạo hiệu ứng ẩn hiện Navbar không dùng JavaScript */
+.header__checkbox {
+    display: none;
+}
+
+.header__menu-icon {
+    cursor: pointer;
+    padding: 0.5rem;
+    order: 2;
+}
+
+.header__nav-icon-bar {
+    background-color: var(--color-dark);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+    transition: var(--transition-smooth);
+}
+
+.header__nav-icon-bar::before,
+.header__nav-icon-bar::after {
+    background-color: var(--color-dark);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    transition: var(--transition-smooth);
+}
+
+.header__nav-icon-bar::before { top: 6px; }
+.header__nav-icon-bar::after { top: -6px; }
+
+.header__navbar {
+    position: fixed; /* CSS Trung cấp: Định vị Fixed bóc tách phần tử khỏi luồng bố cục thông thường */
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--color-white);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+    padding: 6rem 2rem 2rem 2rem;
+    z-index: 999;
+    transition: var(--transition-smooth);
+}
+
+.header__nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.header__nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+/* Bộ chọn giả :hover và Modifier cho liên kết đang kích hoạt */
+.header__nav-link:hover,
+.header__nav-link--active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+/* Phối hợp Bộ chọn trạng thái :checked và tổ hợp dấu ngã (~) để can thiệp CSS đóng mở navbar */
+.header__checkbox:checked ~ .header__navbar {
+    right: 0;
+}
+
+.header__checkbox:checked ~ .header__menu-icon .header__nav-icon-bar {
+    background: transparent;
+}
+
+.header__checkbox:checked ~ .header__menu-icon .header__nav-icon-bar::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.header__checkbox:checked ~ .header__menu-icon .header__nav-icon-bar::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+
+/* --- BLOCK: HERO SECTION --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero__content {
+    max-width: 750px;
+    color: var(--color-white);
+    /* CSS Nâng cao: Khởi động Hoạt ảnh khi tải trang đầu tiên */
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero__title {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.hero__subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+
+/* --- BLOCK: PRODUCTS SECTION --- */
+.products {
+    padding: 5rem 0;
+}
+
+.products__filter {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.products__filter-label {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.form-select {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* CSS NĂNG CAO: Grid Layout bố cục 2 chiều phân phối lưới sản phẩm từ Mobile-first */
+.products__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+
+/* --- COMPONENT: PRODUCT CARD --- */
+.product-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.product-card__badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: var(--color-white);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: var(--border-radius-sm);
+    z-index: 10;
+    text-transform: uppercase;
+}
+
+/* Trạng thái biến thể nhãn (BEM Modifiers) */
+.product-card__badge--hot { background-color: var(--color-primary); }
+.product-card__badge--new { background-color: #2ecc71; }
+.product-card__badge--discount { background-color: #f1c40f; }
+
+.product-card__img-wrapper {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    background-color: #f5f6fa;
+}
+
+.product-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* CSS Nâng cao: Hiệu ứng chuyển đổi mượt phối hợp Transform scale */
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-card:hover .product-card__img {
+    transform: scale(1.1) rotate(1deg);
+}
+
+.product-card__info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-card__title {
+    font-size: 1rem;
+    color: var(--color-dark);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.product-card__price-box {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.product-card__price-new {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.product-card__price-old {
+    color: var(--color-gray);
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.product-card__btn {
+    margin-top: auto; /* Kỹ thuật đẩy nút ép sát đáy khung thẻ sản phẩm đồng bộ */
+    width: 100%;
+}
+
+
+/* --- BLOCK: SIZE GUIDE TABLE --- */
+.size-guide {
+    padding: 5rem 0;
+    background-color: var(--color-white);
+}
+
+.size-guide__table-wrapper {
+    overflow-x: auto; /* Chống vỡ giao diện trên màn hình quá hẹp bằng thanh cuộn nội bộ */
+}
+
+.size-guide__table {
+    width: 100%;
+    border-collapse: collapse; /* Hủy khoảng hở nhân đôi đường viền ô mặc định */
+    margin-top: 1.5rem;
+    min-width: 600px;
+}
+
+.size-guide__table th, 
+.size-guide__table td {
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.size-guide__table th {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* CSS Trung cấp: Phần tử giả cấu trúc sọc dòng xen kẽ bằng :nth-child(even) */
+.size-guide__table tbody tr:nth-child(even) {
+    background-color: var(--color-light);
+}
+
+.size-guide__table tfoot td {
+    font-style: italic;
+    color: var(--color-gray);
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+
+/* --- BLOCK: CONTACT FORM --- */
+.contact {
+    padding: 5rem 0;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.contact__box {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.contact__box h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--color-white);
+}
+
+.contact__box p {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--color-gray);
+    font-weight: 300;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.contact__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact__form-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.form-input, 
+.form-textarea {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid var(--color-gray);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--color-white);
+    border-radius: var(--border-radius-sm);
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+
+/* Bộ chọn giả trạng thái biểu mẫu :focus khi người dùng nhấp ô nhập liệu */
+.form-input:focus, 
+.form-textarea:focus {
+    border-color: var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-textarea {
+    resize: vertical; /* Chặn kéo giãn chiều ngang gây vỡ bố cục hệ thống */
+}
+
+.contact__audio-player {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    margin: 0.5rem 0;
+}
+
+.audio-element {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+
+/* --- BLOCK: FOOTER --- */
+.footer {
+    background-color: var(--color-dark-muted);
+    color: var(--color-gray);
+    padding: 2rem 0;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer__links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer__link:hover {
+    color: var(--color-white);
+}
+
+
+/* ==========================================================================
+   CSS NĂNG CAO: @KEYFRAMES ANIMATION (HOẠT ẢNH HOẠT ĐỘNG)
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================================================
+   CSS TRUNG CẤP: RESPONSIVE DESIGN (Media Queries - Tư duy Mobile-First)
+   ========================================================================== */
+
+/* --- BREAKPOINT 1: Màn hình từ 576px trở lên (Thiết bị Small di động lớn / Máy tính bảng nhỏ) --- */
+@media (min-width: 576px) {
+    .products__grid {
+        grid-template-columns: repeat(2, 1fr); /* Hệ lưới CSS Grid tự động nâng lên 2 cột */
+    }
+    .hero__title {
+        font-size: 3rem;
+    }
+}
+
+/* --- BREAKPOINT 2: Màn hình từ 768px trở lên (Thiết bị Medium / Máy tính bảng thông dụng) --- */
+@media (min-width: 768px) {
+    .hero {
+        height: 70vh;
+    }
+    .hero__title {
+        font-size: 3.8rem;
+    }
+    .header__search-form {
+        order: 0; /* Đưa Form tìm kiếm về vị trí cân đối ở giữa trục chính Flexbox */
+        width: 280px;
+    }
+}
+
+/* --- BREAKPOINT 3: Màn hình từ 992px trở lên (Thiết bị Large / Máy tính để bàn) --- */
+@media (min-width: 992px) {
+    .header__menu-icon {
+        display: none; /* Ẩn hoàn toàn nút menu ba gạch khi ở màn hình lớn */
+    }
+    /* Chuyển đổi Navbar từ dạng trượt di động về thanh hiển thị ngang truyền thống */
+    .header__navbar {
+        position: static;
+        width: auto;
+        max-width: none;
+        height: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+    .header__nav-list {
+        flex-direction: row; /* Thay đổi trục Flexbox thành hàng ngang */
+        gap: 2rem;
+    }
+    .header__nav-link {
+        font-size: 1rem;
+        padding: 0;
+    }
+    .header__search-form {
+        width: 380px;
+    }
+    .products__grid {
+        grid-template-columns: repeat(4, 1fr); /* Nâng lưới Grid lên thành 4 cột sản phẩm song song */
+    }
+    .footer__content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+/* --- BREAKPOINT 4: Màn hình cực lớn từ 1200px trở lên (Extra Large Desktop) --- */
+@media (min-width: 1200px) {
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__container">
+            <a href="#" class="header__logo">Sport<span class="header__logo--highlight">Zone</span></a>
+            
+            <form class="header__search-form" action="/search" method="GET">
+                <input type="text" placeholder="Tìm giày, quần áo..." class="header__search-input" required>
+                <button type="submit" class="header__search-btn" aria-label="Tìm kiếm">
+                    <svg class="header__search-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </form>
+            
+            <input type="checkbox" id="menu-toggle" class="header__checkbox">
+            <label for="menu-toggle" class="header__menu-icon">
+                <span class="header__nav-icon-bar"></span>
+            </label>
+
+            <nav class="header__navbar">
+                <ul class="header__nav-list">
+                    <li><a href="#" class="header__nav-link header__nav-link--active">Trang Chủ</a></li>
+                    <li><a href="#products" class="header__nav-link">Sản Phẩm</a></li>
+                    <li><a href="#size-guide" class="header__nav-link">Bảng Size</a></li>
+                    <li><a href="#contact" class="header__nav-link">Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">BỨT PHÁ GIỚI HẠN</h1>
+                <p class="hero__subtitle">Bộ sưu tập trang phục thế hệ mới mang lại hiệu suất tập luyện tối ưu và thông thoáng tuyệt đối.</p>
+                <a href="#products" class="hero__btn btn btn--primary">MUA NGAY BÂY GIỜ</a>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="container">
+                <h2 class="section-title">SẢN PHẨM NỔI BẬT</h2>
+                
+                <div class="products__filter">
+                    <label for="product-filter" class="products__filter-label">Dòng sản phẩm:</label>
+                    <select id="product-filter" class="form-select">
+                        <option value="all">Tất cả trang phục</option>
+                        <optgroup label="Giày Thể Thao Chuyên Dụng">
+                            <option value="running">Giày chạy bộ Hi-Performance</option>
+                            <option value="basketball">Giày bóng rổ cổ cao hỗ trợ đệm</option>
+                        </optgroup>
+                        <optgroup label="Thời Trang Tập Luyện">
+                            <option value="clothes">Áo thun công nghệ Dry-Fit</option>
+                            <option value="shorts">Quần short co giãn 4 chiều</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="products__grid">
+                    
+                    <article class="product-card">
+                        <span class="product-card__badge product-card__badge--hot">Hot</span>
+                        <div class="product-card__img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop" alt="Giày Chạy Bộ Nike Air Max chuyên dụng" class="product-card__img">
+                        </div>
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Giày Chạy Bộ Nike Air Max</h3>
+                            <div class="product-card__price-box">
+                                <span class="product-card__price-new">3.200.000đ</span>
+                                <span class="product-card__price-old">4.000.000đ</span>
+                            </div>
+                            <button class="product-card__btn btn btn--dark">Thêm Vào Giỏ</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <span class="product-card__badge product-card__badge--new">New</span>
+                        <div class="product-card__img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop" alt="Áo Thể Thao Adidas Dry-Fit co giãn" class="product-card__img">
+                        </div>
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Áo Thể Thao Adidas Dry-Fit</h3>
+                            <div class="product-card__price-box">
+                                <span class="product-card__price-new">650.000đ</span>
+                                <span class="product-card__price-old">850.000đ</span>
+                            </div>
+                            <button class="product-card__btn btn btn--dark">Thêm Vào Giỏ</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <span class="product-card__badge product-card__badge--discount">-20%</span>
+                        <div class="product-card__img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=600&auto=format&fit=crop" alt="Quần Short Tập Luyện Siêu Nhẹ" class="product-card__img">
+                        </div>
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Quần Short Tập Luyện Co Giãn</h3>
+                            <div class="product-card__price-box">
+                                <span class="product-card__price-new">400.000đ</span>
+                                <span class="product-card__price-old">500.000đ</span>
+                            </div>
+                            <button class="product-card__btn btn btn--dark">Thêm Vào Giỏ</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <span class="product-card__badge product-card__badge--hot">Hot</span>
+                        <div class="product-card__img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=600&auto=format&fit=crop" alt="Balo Thể Thao Chống Nước cao cấp" class="product-card__img">
+                        </div>
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Balo Thể Thao Chống Nước</h3>
+                            <div class="product-card__price-box">
+                                <span class="product-card__price-new">950.000đ</span>
+                                <span class="product-card__price-old">1.200.000đ</span>
+                            </div>
+                            <button class="product-card__btn btn btn--dark">Thêm Vào Giỏ</button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="size-guide" class="size-guide">
+            <div class="container">
+                <h2 class="section-title">BẢNG CHỌN SIZE ĐỒ TIÊU CHUẨN</h2>
+                <div class="size-guide__table-wrapper">
+                    <table class="size-guide__table">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Size Châu Á</th>
+                                <th colspan="2">Thông số chiều cao (cm)</th>
+                                <th colspan="2">Thông số cân nặng (kg)</th>
+                            </tr>
+                            <tr>
+                                <th>Tối thiểu</th>
+                                <th>Tối đa</th>
+                                <th>Tối thiểu</th>
+                                <th>Tối đa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>M</strong></td>
+                                <td>160 cm</td>
+                                <td>167 cm</td>
+                                <td>54 kg</td>
+                                <td>60 kg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>L</strong></td>
+                                <td>168 cm</td>
+                                <td>174 cm</td>
+                                <td>61 kg</td>
+                                <td>70 kg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>XL</strong></td>
+                                <td>175 cm</td>
+                                <td>182 cm</td>
+                                <td>71 kg</td>
+                                <td>85 kg</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5">* Ghi chú: Nếu số đo của bạn nằm ở khoảng giữa hai size, hãy ưu tiên chọn size lớn hơn để đảm bảo sự thoải mái tuyệt đối khi vận động.</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact__box">
+                    <h2>ĐĂNG KÝ NHẬN TƯ VẤN CHUYÊN SÂU</h2>
+                    <p>Hệ thống hỗ trợ đồng bộ và ghi nhớ thông tin đăng ký của bạn trực tiếp tại máy khách (Web Storage).</p>
+                    
+                    <form class="contact__form" id="mainContactForm">
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="user-email">Địa chỉ Email liên hệ *</label>
+                            <input type="email" id="user-email" placeholder="name@example.com" class="form-input" required>
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="user-date">Ngày dự kiến bắt đầu tập luyện hoặc thi đấu</label>
+                            <input type="date" id="user-date" class="form-input">
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="user-target">Mục tiêu thể thao chính của bạn</label>
+                            <select id="user-target" class="form-select select-contact" required>
+                                <option value="" disabled selected>Vui lòng chọn mục tiêu...</option>
+                                <optgroup label="Tập luyện cường độ cao">
+                                    <option value="marathon">Chạy bộ Marathon / Điền kinh</option>
+                                    <option value="gym">Tập Gym / Thể hình / Cardio</option>
+                                </optgroup>
+                                <optgroup label="Thể thao phong trào / Giải trí">
+                                    <option value="football">Bóng đá sân cỏ nhân tạo</option>
+                                    <option value="badminton">Cầu lông / Tennis / Pickleball</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="user-message">Thông tin thêm (Chiều cao, cân nặng, phom chân) *</label>
+                            <textarea id="user-message" placeholder="Ví dụ: Cao 1m72, nặng 68kg, phom chân bè bề ngang, cần tư vấn size giày chạy ôm vừa phải..." rows="4" class="form-textarea" required></textarea>
+                        </div>
+
+                        <div class="contact__audio-player">
+                            <label class="contact__form-label">Nhạc nền tạo động lực (Motivation Audio):</label>
+                            <audio controls class="audio-element">
+                                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                                Trình duyệt của bạn không hỗ trợ phát âm thanh trực tuyến.
+                            </audio>
+                        </div>
+
+                        <button type="submit" class="contact__submit-btn btn btn--primary">GỬI YÊU CẦU ĐĂNG KÝ</button>
+                    </form>
+                    
+                    <div id="storageAlert" class="contact__storage-info" style="margin-top: 1.5rem; display: none;">
+                        <span class="js-storage-alert">Hệ thống LocalStorage:</span> Thông tin email của bạn đã được ghi nhớ thành công trên trình duyệt.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p>&copy; 2026 SportZone Shop. Bản quyền mã nguồn và giao diện thuộc về Front-End Developer.</p>
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Điều khoản dịch vụ</a></li>
+                    <li><a href="#" class="footer__link">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('mainContactForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                localStorage.setItem('sportzone_subscriber', document.getElementById('user-email').value);
+                document.getElementById('storageAlert').style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>

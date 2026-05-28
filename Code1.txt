@@ -1,0 +1,46 @@
+BẢN ĐỒ KIẾN THỨC HTML & CSS TỪ CƠ BẢN ĐẾN NÂNG CAO
+
+I. TOÀN BỘ KIẾN THỨC HTML
+
+1. HTML Cơ bản (Cấu trúc & Nội dung)
+- Cú pháp & Thuộc tính: Cấu trúc thẻ (<tag>), thẻ đơn, thẻ đôi, thuộc tính id, class, src, href.
+- Văn bản: Các thẻ tiêu đề (<h1> - <h6>), đoạn văn (<p>), xuống dòng (<br>), nhấn mạnh (<strong>, <em>).
+- Liên kết & Hình ảnh: Thẻ điều hướng (<a>), chèn ảnh (<img>) với thuộc tính alt.
+- Danh sách: Danh sách không thứ tự (<ul>), có thứ tự (<ol>), phần tử con (<li>).
+- Bảng biểu (Table): Cấu trúc chuẩn <table>, <thead>, <tbody>, <tfoot>, <tr>, <th>, <td>. Thuộc tính gộp ô colspan, rowspan.
+
+2. HTML Trung cấp (Form & Biểu mẫu)
+- Cấu trúc Form: Thẻ bao bọc <form>, nhãn <label>.
+- Thành phần nhập liệu: Các loại <input> (text, password, email, number, date, checkbox, radio).
+- Danh sách lựa chọn: Thẻ thả xuống <select>, thẻ con <option>.
+- Gom nhóm lựa chọn: Sử dụng <optgroup> để phân loại các <option>.
+- Xác thực cơ bản: Các thuộc tính required, placeholder, min, max, readonly, disabled.
+
+3. HTML Nâng cao (Ngữ nghĩa & SEO)
+- Semantic HTML: Thay thế <div> vô nghĩa bằng <header>, <nav>, <main>, <section>, <article>, <aside>, <footer>.
+- Đa phương tiện nâng cao: Thẻ video (<video>), âm thanh (<audio>), đồ họa vector (<svg>), vùng vẽ (<canvas>).
+- SEO On-page cơ bản: Thẻ <meta>, <title>, cấu trúc phân cấp thẻ tiêu đề chuẩn SEO.
+- Bộ lưu trữ trình duyệt: Khái niệm ban đầu về LocalStorage và SessionStorage.
+
+
+II. TOÀN BỘ KIẾN THỨC CSS
+
+1. CSS Cơ bản (Định dạng & Box Model)
+- Nhúng CSS: Ba cách viết Inline (trực tiếp), Internal (trong file), External (file .css riêng).
+- Bộ chọn (Selectors) cơ bản: Chọn theo tên thẻ, class (.name), ID (#name), tổ hợp đơn giản (dấu cách, dấu >).
+- Mô hình Box Model: Bản chất và cách tính kích thước của Margin, Border, Padding, Content. Thuộc tính box-sizing: border-box.
+- Định dạng chữ & Nền: Font chữ, màu sắc, kích cỡ, khoảng cách dòng, ảnh nền (background-image), căn chỉnh (text-align).
+
+2. CSS Trung cấp (Bố cục & Định vị)
+- Thuộc tính Display: Khác biệt giữa block, inline, inline-block, và none.
+- Định vị (Position): Cách dùng static, relative, absolute, fixed, sticky và trục lớp z-index.
+- Flexbox Layout: Trục chính/phụ, display: flex, flex-direction, justify-content, align-items, flex-wrap, gap.
+- Responsive Web Design: Kỹ thuật viết @media (Media Queries) để giao diện tự co giãn theo màn hình Mobile, Tablet, Desktop.
+- Bộ chọn giả & Phần tử giả: :hover, :active, :nth-child(), ::before, ::after.
+
+3. CSS Nâng cao (Tối ưu & Kiến trúc)
+- CSS Grid Layout: Bố cục 2 chiều, display: grid, grid-template-columns, grid-template-rows, grid-area.
+- Biến CSS (Custom Properties): Khai báo và tái sử dụng màu sắc, kích thước bằng --variable-name và var().
+- Hiệu ứng chuyển động: transition (mượt mà), transform (xoay, thu phóng, dịch chuyển), @keyframes (hoạt ảnh phức tạp).
+- Tiền xử lý CSS (Preprocessors): Học Sass/SCSS để viết code lồng nhau (nesting), dùng hàm, mixin và chia nhỏ file.
+- Kiến trúc code (BEM): Phương pháp đặt tên class Block__Element--Modifier giúp dự án lớn không bị rối code.
