@@ -1,0 +1,142 @@
+/* Reset CSS cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 1. Thiết kế Top Header */
+.top-header {
+  background-color: #fff;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Thanh tìm kiếm */
+.search-box {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-box select,
+.search-box input,
+.search-box button {
+  padding: 8px 20px;
+  border: none;
+  outline: none;
+}
+
+.search-box select {
+  background-color: #f9f9f9;
+  border-right: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.search-box input {
+  width: 300px;
+}
+
+.search-box button {
+  background-color: #000000;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Giỏ hàng */
+.cart {
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.cart-icon {
+  background-color: #000000;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+/* 2. Thiết kế Thanh Điều Hướng (Nav Bar) */
+.nav-bar {
+  background-color: #1a1a1a;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li a {
+  display: block;
+  padding: 15px 20px;
+  color: #bbb;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover,
+.menu li.active a {
+  color: #fff;
+  background-color: #2a2a2a;
+}
+
+/* Định dạng riêng cho mục Trang chủ màu trắng nổi bật */
+.menu li.active a {
+  background-color: #fff;
+  color: #111;
+}
+
+/* 3. Thiết kế Khu vực Banner */
+.hero-banner {
+  margin-top: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+  width: 18px; /* Làm dẹt chấm đang kích hoạt giống trong ảnh */
+  border-radius: 4px;
+}
