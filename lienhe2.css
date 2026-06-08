@@ -1,0 +1,41 @@
+.footer-col p a {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.footer-col p a:hover {
+  opacity: 1;
+  color: #ff0000; 
+}
+
+.footer-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.footer-map {
+  flex: 1;
+  min-width: 300px;
+  border: 1px solid #222; 
+  border-radius: 6px;   
+  overflow: hidden;       
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+  transition: border-color 0.3s ease;
+}
+
+.footer-map:hover {
+  border-color: #444;
+}
+
+@media (max-width: 768px) {
+  .footer-middle {
+    flex-direction: column;
+  }
+  .company-info, .footer-map {
+    width: 100%;
+  }
+}
