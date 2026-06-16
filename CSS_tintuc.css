@@ -83,11 +83,24 @@ section{
     border-radius:10px;
 }
 
+
+.sale-link{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .sale-box{
-    background:#ff5722;
-    color:white;
-    text-align:center;
-    padding:30px;
-    border-radius:10px;
-    margin-bottom:40px;
+    background: #ff5722;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sale-box:hover{
+    transform: scale(1.02);
+    opacity: 0.9;
 }
