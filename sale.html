@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
+  <link rel="stylesheet" href="CSS_sanpham.css" />
+  
   <link rel="apple-touch-icon" sizes="57x57" href="./icon/apple-icon-57x57.png" />
   <link rel="apple-touch-icon" sizes="60x60" href="./icon/apple-icon-60x60.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="./icon/apple-icon-72x72.png" />
@@ -23,260 +25,6 @@
   <meta name="theme-color" content="#ffffff" />
   
   <title>Cửa Hàng Pickleball Cao Cấp - Amakirk</title>
-
-  <style>
-    :root {
-      --primary-color: #ff4757;
-      --secondary-color: #2ed573;
-      --dark-color: #2f3542;
-      --light-bg: #f1f2f6;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background-color: var(--light-bg);
-      color: var(--dark-color);
-      padding-bottom: 60px;
-    }
-
-    header {
-      background-color: white;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      color: var(--dark-color);
-      letter-spacing: 1px;
-      position: relative;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: var(--primary-color);
-      margin: 8px auto 0 auto;
-      border-radius: 2px;
-    }
-
-    /* Lưới sản phẩm thông minh */
-    .container {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .product-item {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.04);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .product-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    .product-img {
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
-      background: #f9f9f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .product-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .product-item:hover .product-img img {
-      transform: scale(1.08);
-    }
-
-    .product-info {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .product-name {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      height: 44px; /* Giới hạn 2 dòng */
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
-
-    .product-desc {
-      font-size: 0.9rem;
-      color: #747d8c;
-      margin-bottom: 15px;
-      height: 60px; /* Giới hạn 3 dòng */
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-    }
-
-    .product-price {
-      font-size: 1.3rem;
-      color: var(--primary-color);
-      font-weight: 700;
-      margin-top: auto;
-      margin-bottom: 15px;
-    }
-
-    /* Nút Mua hàng */
-    .btn-buy {
-      background-color: var(--dark-color);
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-      width: 100%;
-    }
-
-    .btn-buy:hover {
-      background-color: var(--primary-color);
-    }
-
-    /* Khu vực Giỏ hàng và Form đặt hàng */
-    .checkout-section {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      margin-top: 50px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.04);
-    }
-
-    .checkout-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-
-    @media (max-width: 768px) {
-      .checkout-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .cart-summary h3, .order-form h3 {
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--light-bg);
-      padding-bottom: 10px;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px dashed #eee;
-    }
-
-    .cart-item-remove {
-      color: var(--primary-color);
-      cursor: pointer;
-      font-size: 0.85rem;
-      margin-left: 10px;
-    }
-
-    .total-price {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      text-align: right;
-      margin-top: 20px;
-    }
-
-    /* Form nhập liệu */
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .form-group input, .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-
-    .form-group input:focus, .form-group textarea:focus {
-      border-color: var(--primary-color);
-      outline: none;
-    }
-
-    .btn-submit {
-      background-color: var(--secondary-color);
-      color: white;
-      border: none;
-      padding: 15px;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      width: 100%;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
-    .btn-submit:hover {
-      opacity: 0.9;
-    }
-
-    .empty-cart-msg {
-      color: #999;
-      text-align: center;
-      padding: 20px 0;
-    }
-  </style>
 </head>
 <body>
 
@@ -288,9 +36,7 @@
     <div class="product-grid">
       
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/Vot_TOUR.jpg" alt="Vợt Amakirk Power" />
-        </div>
+        <div class="product-img"><img src="img/Vot_TOUR.jpg" alt="Vợt Amakirk Power" /></div>
         <div class="product-info">
           <h3 class="product-name">Vợt Amakirk VT Tour Promax (3 Màu)</h3>
           <p class="product-desc">Dòng vợt cao cấp tối ưu cho lối chơi tấn công bùng nổ, kiểm soát bóng tốt.</p>
@@ -300,9 +46,7 @@
       </div>
 
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/bong_amk.jpg" alt="Bóng Amakirk" />
-        </div>
+        <div class="product-img"><img src="img/bong_amk.jpg" alt="Bóng Amakirk" /></div>
         <div class="product-info">
           <h3 class="product-name">Quả Bóng Pickleball Amakirk 48 Lỗ</h3>
           <p class="product-desc">Độ bền cao, bay chuẩn xác, đạt tiêu chuẩn thi đấu quốc tế.</p>
@@ -312,9 +56,7 @@
       </div>
 
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/balo_amk.jpg" alt="Balo Amakirk" />
-        </div>
+        <div class="product-img"><img src="img/balo_amk.jpg" alt="Balo Amakirk" /></div>
         <div class="product-info">
           <h3 class="product-name">Balo Thể Thao Amakirk Pro</h3>
           <p class="product-desc">Thiết kế chống nước, nhiều ngăn chứa vợt và phụ kiện tiện lợi.</p>
@@ -324,9 +66,7 @@
       </div>
 
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/Giay_pick1.jpg" alt="Giày Pickleball " />
-        </div>
+        <div class="product-img"><img src="img/Giay_pick1.jpg" alt="Giày Pickleball " /></div>
         <div class="product-info">
           <h3 class="product-name">Giày Pickleball Skechers - Mẫu 1</h3>
           <p class="product-desc">Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho người chơi.</p>
@@ -336,9 +76,7 @@
       </div>
 
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/Giay_pick2.jpg" alt="Giày Pickleball " />
-        </div>
+        <div class="product-img"><img src="img/Giay_pick2.jpg" alt="Giày Pickleball " /></div>
         <div class="product-info">
           <h3 class="product-name">Giày Pickleball Skechers - Mẫu 2</h3>
           <p class="product-desc">Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho người chơi.</p>
@@ -348,9 +86,7 @@
       </div>
 
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/Giay_pick3.jpg" alt="Giày Pickleball " />
-        </div>
+        <div class="product-img"><img src="img/Giay_pick3.jpg" alt="Giày Pickleball " /></div>
         <div class="product-info">
           <h3 class="product-name">Giày Pickleball Skechers - Mẫu 3</h3>
           <p class="product-desc">Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho người chơi.</p>
@@ -360,9 +96,7 @@
       </div>
 
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/vot_amk4.jpg" alt="Vợt Amakirk 5.0" />
-        </div>
+        <div class="product-img"><img src="img/vot_amk4.jpg" alt="Vợt Amakirk 5.0" /></div>
         <div class="product-info">
           <h3 class="product-name">Vợt Amakirk 5.0 - Control</h3>
           <p class="product-desc">Dòng vợt cao cấp tối ưu cho lối chơi tấn công bùng nổ, kiểm soát bóng tốt.</p>
@@ -372,9 +106,7 @@
       </div>
 
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/Quan_ao1.jpg" alt="Quần Áo Thể Thao" />
-        </div>
+        <div class="product-img"><img src="img/Quan_ao1.jpg" alt="Quần Áo Thể Thao" /></div>
         <div class="product-info">
           <h3 class="product-name">Quần Áo Thể Thao</h3>
           <p class="product-desc">Thoái mái dễ chịu giúp vận động tốt</p>
@@ -384,9 +116,7 @@
       </div>
 
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/Giay_pick6.jpg" alt="Giày Pickleball" />
-        </div>
+        <div class="product-img"><img src="img/Giay_pick6.jpg" alt="Giày Pickleball" /></div>
         <div class="product-info">
           <h3 class="product-name">Giày Pickleball Asics FF3 - Bản 1</h3>
           <p class="product-desc">Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho người chơi.</p>
@@ -396,9 +126,7 @@
       </div>
 
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/Quan_ao3.jpg" alt="Quần Áo Thể Thao" />
-        </div>
+        <div class="product-img"><img src="img/Quan_ao3.jpg" alt="Quần Áo Thể Thao" /></div>
         <div class="product-info">
           <h3 class="product-name">Áo Thể Thao Premium</h3>
           <p class="product-desc">Thoái mái dễ chịu giúp vận động tốt.</p>
@@ -408,9 +136,7 @@
       </div>
 
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/Giay_pick9.jpg" alt="Giày Pickleball Adidas" />
-        </div>
+        <div class="product-img"><img src="img/Giay_pick9.jpg" alt="Giày Pickleball Adidas" /></div>
         <div class="product-info">
           <h3 class="product-name">Giày Pickleball Adidas</h3>
           <p class="product-desc">Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho người chơi.</p>
@@ -420,9 +146,7 @@
       </div>
 
       <div class="product-item">
-        <div class="product-img">
-          <img src="img/Giay_pick7.jpg" alt="Giày Pickleball Asics FF3" />
-        </div>
+        <div class="product-img"><img src="img/Giay_pick7.jpg" alt="Giày Pickleball Asics FF3" /></div>
         <div class="product-info">
           <h3 class="product-name">Giày Pickleball Asics FF3 - Bản 2</h3>
           <p class="product-desc">Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho người chơi.</p>
@@ -463,11 +187,11 @@
 
             <div class="form-group">
               <label for="address">Địa Chỉ Nhận Hàng *</label>
-              <textarea id="address" name="Dia_Chi" rows="3" placeholder="Số nhà, tên đường, phường/xã, quận/huyện..." required></textarea>
+              <textarea id="address" name="Dia_Chi" rows="3" placeholder="Số nhà, tên đường..." required></textarea>
             </div>
 
             <div class="form-group">
-              <label for="note">Ghi Chú Thêm (Nếu có)</label>
+              <label for="note">Ghi Chú Thêm</label>
               <input type="text" id="note" name="Ghi_Chu" placeholder="Chọn size giày, màu sắc vợt..." />
             </div>
 
@@ -479,89 +203,6 @@
     </div>
   </div>
 
-  <script>
-    let cart = [];
-
-    // Hàm thêm sản phẩm vào giỏ
-    function addToCart(name, price) {
-      // Kiểm tra sản phẩm đã có trong giỏ chưa
-      const existingItem = cart.find(item => item.name === name);
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({ name: name, price: price, quantity: 1 });
-      }
-      updateCartUI();
-      
-      // Tự động cuộn mượt xuống khu vực đặt hàng để khách thấy giỏ hàng
-      document.getElementById('checkout-area').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Hàm xóa bớt sản phẩm khỏi giỏ
-    function removeFromCart(index) {
-      cart.splice(index, 1);
-      updateCartUI();
-    }
-
-    // Định dạng số tiền VND (Ví dụ: 3000000 -> 3.000.000)
-    function formatMoney(amount) {
-      return amount.toLocaleString('vi-VN') + ' đ';
-    }
-
-    // Hàm cập nhật giao diện giỏ hàng và chuẩn bị dữ liệu gửi đi
-    function updateCartUI() {
-      const cartContent = document.getElementById('cart-content');
-      const cartTotal = document.getElementById('cart-total');
-      const formCartDetails = document.getElementById('form-cart-details');
-      const formCartTotal = document.getElementById('form-cart-total');
-
-      if (cart.length === 0) {
-        cartContent.innerHTML = '<p class="empty-cart-msg">Chưa có sản phẩm nào được chọn.</p>';
-        cartTotal.innerText = 'Tổng cộng: 0 đ';
-        formCartDetails.value = '';
-        formCartTotal.value = '';
-        return;
-      }
-
-      let html = '';
-      let total = 0;
-      let textDetails = ''; // Chuỗi văn bản phục vụ gửi qua form email
-
-      cart.forEach((item, index) => {
-        let itemTotal = item.price * item.quantity;
-        total += itemTotal;
-        textDetails += `${item.name} (SL: ${item.quantity}) - Giá: ${formatMoney(itemTotal)} | `;
-
-        html += `
-          <div class="cart-item">
-            <div>
-              <strong>${item.name}</strong> <br>
-              <small>${formatMoney(item.price)} x ${item.quantity}</small>
-            </div>
-            <div>
-              <span>${formatMoney(itemTotal)}</span>
-              <span class="cart-item-remove" onclick="removeFromCart(${index})">❌ Xóa</span>
-            </div>
-          </div>
-        `;
-      });
-
-      cartContent.innerHTML = html;
-      cartTotal.innerText = 'Tổng cộng: ' + formatMoney(total);
-
-      // Điền ngầm dữ liệu vào form
-      formCartDetails.value = textDetails;
-      formCartTotal.value = formatMoney(total);
-    }
-
-    // Chặn gửi form nếu giỏ hàng rỗng
-    document.getElementById('purchase-form').addEventListener('submit', function(e) {
-      if (cart.length === 0) {
-        e.preventDefault();
-        alert('Vui lòng thêm ít nhất một sản phẩm vào giỏ hàng trước khi đặt mua!');
-      }
-    });
-  </script>
-
+  <script src="script_giohang.js"></script>
 </body>
 </html>
