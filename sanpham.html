@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS_sanpham.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./icon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./icon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./icon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./icon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./icon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./icon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./icon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./icon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./icon/android-icon-192x192.png"
+    />
+    <link
+      class="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icon/favicon-32x32.png"
+    />
+    <link
+      class="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./icon/favicon-96x96.png"
+    />
+    <link
+      class="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./icon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="./icon/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Sản Phẩm - MaxxSport</title>
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="container header-flex">
+        <div class="logo">
+          <img src="img/logo1.jpg" alt="SPSP Logo" height="70" />
+        </div>
+        <div class="search-box">
+          <select name="category">
+            <option>Chuyên mục</option>
+            <option value="vot">Vợt Pickleball</option>
+            <option value="giay">Giày Thể Thao</option>
+            <option value="phu-kien">Phụ kiện</option>
+            <option value="quan-ao">Quần Áo Thể Thao</option>
+          </select>
+          <input type="text" placeholder="Tìm kiếm..." />
+          <button type="button">🔍</button>
+        </div>
+        <div class="cart">
+          <div class="cart-header-toggle" onclick="toggleCartDropdown()">
+            <span id="header-cart-info">0 Sản phẩm: 0 đ</span>
+            <span class="cart-icon">🛒</span>
+          </div>
+
+          <div id="cart-dropdown" class="cart-dropdown" style="display: none">
+            <div id="cart-dropdown-items"></div>
+            <div class="cart-dropdown-footer">
+              <a href="sale.html" class="btn-go-to-cart"
+                >Xem Chi Tiết & Đặt Hàng</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-bar">
+      <div class="container">
+        <ul class="menu">
+          <li><a href="./HTML.html">TRANG CHỦ</a></li>
+          <li><a href="./Gioithieu.html">GIỚI THIỆU</a></li>
+          <li class="active"><a href="./sanpham.html">SẢN PHẨM</a></li>
+          <li><a href="./sale.html">SALE OFF</a></li>
+          <li><a href="tintuc.html">TIN TỨC</a></li>
+          <li><a href="./lienhe.html">LIÊN HỆ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="./HTML.html" class="breadcrumb-item home">Trang chủ</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-item active">TẤT CẢ SẢN PHẨM</span>
+    </div>
+
+    <div class="main-container">
+      <aside class="sidebar">
+        <div class="filter-group">
+          <h3>THƯƠNG HIỆU</h3>
+          <label
+            ><input type="checkbox" class="brand-filter" value="adidas" />
+            Adidas</label
+          >
+          <label
+            ><input type="checkbox" class="brand-filter" value="Jogabola" />
+            Jogabola</label
+          >
+          <label
+            ><input type="checkbox" class="brand-filter" value="babolad" />
+            Babolad</label
+          >
+          <label
+            ><input type="checkbox" class="brand-filter" value="sypik" />
+            Sypik</label
+          >
+          <label
+            ><input type="checkbox" class="brand-filter" value="joola" />
+            Joola</label
+          >
+          <label
+            ><input type="checkbox" class="brand-filter" value="kaiwin" />
+            Kaiwin</label
+          >
+
+          <label class="extra-brand"
+            ><input type="checkbox" class="brand-filter" value="amakirk" />
+            Amakirk</label
+          >
+          <label class="extra-brand"
+            ><input type="checkbox" class="brand-filter" value="skechers" />
+            Skechers</label
+          >
+          <label class="extra-brand"
+            ><input type="checkbox" class="brand-filter" value="asics" />
+            Asics</label
+          >
+          <label class="extra-brand"
+            ><input type="checkbox" class="brand-filter" value="maxxsport" />
+            MaxxSport</label
+          >
+
+          <span class="see-more" id="toggle-brands-btn">Xem thêm ▾</span>
+        </div>
+
+        <div class="filter-group">
+          <h3>DÒNG SẢN PHẨM</h3>
+          <label
+            ><input type="checkbox" class="category-filter" value="vot" /> VỢT
+            PICKLEBALL</label
+          >
+          <label
+            ><input type="checkbox" class="category-filter" value="bong" /> BÓNG
+            PICKLEBALL</label
+          >
+          <label
+            ><input type="checkbox" class="category-filter" value="balo" /> BALO
+            THỂ THAO</label
+          >
+          <label
+            ><input type="checkbox" class="category-filter" value="giay" /> GIÀY
+            PICKLEBALL</label
+          >
+          <label
+            ><input type="checkbox" class="category-filter" value="quan-ao" />
+            QUẦN ÁO THỂ THAO</label
+          >
+        </div>
+      </aside>
+
+      <main class="products-content">
+        <div class="products-header-bar">
+          <h1 class="page-title">Tất cả sản phẩm</h1>
+          <div class="sort-bar">
+            <label for="sort">Sắp xếp: </label>
+            <select id="sort">
+              <option value="default">Mặc định</option>
+              <option value="price-asc">Giá tăng dần</option>
+              <option value="price-desc">Giá giảm dần</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="products-grid">
+          <a
+            href="chitiet1.html"
+            class="product-item"
+            data-brand="amakirk"
+            data-category="vot"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/Vot_TOUR.jpg" alt="Vợt Amakirk Power" />
+              <span class="badge-new">NEW ARRIVAL</span>
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Amakirk</span>
+              <h3 class="product-name">Vợt Amakirk VT Tour Promax (3 Màu)</h3>
+              <div class="price-box">
+                <span class="old-price">4.850.000đ</span>
+                <span class="new-price">3.650.000đ</span>
+              </div>
+              <div class="product-status">Còn hàng</div>
+
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Vợt Amakirk VT Tour Promax (3 Màu)', 3650000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <a
+            href="chitiet2.html"
+            class="product-item"
+            data-brand="amakirk"
+            data-category="bong"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/bong_amk.jpg" alt="Bóng Amakirk" />
+              <span class="badge-new">NEW ARRIVAL</span>
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Amakirk</span>
+              <h3 class="product-name">Quả Bóng Pickleball Amakirk 48 Lỗ</h3>
+              <p class="product-price">55.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Quả Bóng Pickleball Amakirk 48 Lỗ', 55000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <a
+            href="chitiet3.html"
+            class="product-item"
+            data-brand="joola"
+            data-category="bong"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/bong_joola.jpg" alt="Bóng Joola" />
+              <span class="badge-new">NEW ARRIVAL</span>
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Joola</span>
+              <h3 class="product-name">Quả Bóng Pickleball Joola 40 Lỗ</h3>
+              <p class="product-price">75.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Quả Bóng Pickleball Joola 40 Lỗ', 75000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <a
+            href="chitiet9.html"
+            class="product-item"
+            data-brand="LT"
+            data-category="bong"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/bong_LT48.jpg" alt="Bóng LT-48" />
+              <span class="badge-new">NEW ARRIVAL</span>
+            </div>
+            <div class="product-info">
+              <span class="brand-name">LT</span>
+              <h3 class="product-name">Quả Bóng Pickleball LT-48</h3>
+              <div class="price-box">
+                <span class="old-price">360.000đ</span>
+                <span class="new-price">285.000đ</span>
+              </div>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Quả Bóng Pickleball LT-48', 285000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <a
+            href="chitiet4.html"
+            class="product-item"
+            data-brand="amakirk"
+            data-category="balo"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/balo_amk.jpg" alt="Balo Amakirk" />
+              <span class="badge-new">NEW ARRIVAL</span>
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Amakirk</span>
+              <h3 class="product-name">Balo Thể Thao Amakirk Pro</h3>
+              <div class="price-box">
+                <span class="old-price">2.850.000đ</span>
+                <span class="new-price">1.950.000đ</span>
+              </div>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Balo Thể Thao Amakirk Pro', 1950000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <a
+            href="chitiet5.html"
+            class="product-item"
+            data-brand="skechers"
+            data-category="giay"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/Giày pickleball.jpg" alt="Giày Pickleball " />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Skechers</span>
+              <h3 class="product-name">Giày Pickleball Skechers</h3>
+
+              <div class="price-box">
+                <span class="old-price">4.850.000đ</span>
+                <span class="new-price">3.650.000đ</span>
+              </div>
+
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Giày Pickleball Skechers', 3650000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <a
+            href="chitiet6.html"
+            class="product-item"
+            data-brand="sypik"
+            data-category="vot"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/sypik_trion1.jpg" alt="Vợt Sypik Triton 5 Pro" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Sypik</span>
+              <h3 class="product-name">Sypik Triton 5 Pro</h3>
+              <div class="price-box">
+                <span class="old-price">3.450.000đ</span>
+                <span class="new-price">2.650.000đ</span>
+              </div>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Sypik Triton 5 Pro', 2650000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <a
+            href="chitiet7.html"
+            class="product-item"
+            data-brand="jogabola"
+            data-category="giay"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/giay_jogabola1.jpg" alt="Giày Pickleball " />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Jogabola</span>
+              <h3 class="product-name">Giày Pickleball Jogabola Vortex</h3>
+              <p class="product-price">1.750.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Giày Pickleball Jogabola Vortex', 1750000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <a
+            href="chitiet8.html"
+            class="product-item"
+            data-brand="amakirk"
+            data-category="vot"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/vot_amk4.jpg" alt="Vợt Amakirk 5.0" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Amakirk</span>
+              <h3 class="product-name">Vợt Amakirk 5.0 - Control</h3>
+              <div class="price-box">
+                <span class="old-price">3.850.000đ</span>
+                <span class="new-price">2.950.000đ</span>
+              </div>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Vợt Amakirk 5.0 - Control', 2950000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <div
+            class="product-item"
+            data-brand="maxxsport"
+            data-category="quan-ao"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/Quan_ao1.jpg" alt="Quần Áo Thể Thao" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">MaxxSport</span>
+              <h3 class="product-name">Quần Áo Thể Thao</h3>
+              <p class="product-price">650.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Quần Áo Thể Thao', 650000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+          <a
+            href="chitiet10.html"
+            class="product-item"
+            data-brand="asics"
+            data-category="giay"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/Giay_pick6.jpg" alt="Giày Pickleball" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Asics</span>
+              <h3 class="product-name">Giày Pickleball Asics FF3</h3>
+              <p class="product-price">4.550.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Giày Pickleball Asics FF3', 4550000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <a
+            href="chitiet11.html"
+            class="product-item"
+            data-brand="kaiwin"
+            data-category="vot"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/vot_kaiwin.jpg" alt="Vợt Kaiwin VST" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Kaiwin</span>
+              <h3 class="product-name">Kaiwin Diamond VST</h3>
+              <div class="price-box">
+                <span class="old-price">4.500.000đ</span>
+                <span class="new-price">3.650.000đ</span>
+              </div>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Kaiwin Diamond VST', 3650000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <div class="product-item" data-brand="joola" data-category="vot">
+            <div class="product-img-wrapper">
+              <img src="img/joola_1.jpg" alt="Vợt Pickleball Joola" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Joola</span>
+              <h3 class="product-name">Joola Agassi Pro</h3>
+              <p class="product-price">5.550.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Joola Agassi Pro', 5550000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+          <div class="product-item" data-brand="joola" data-category="vot">
+            <div class="product-img-wrapper">
+              <img src="img/joola_2.jpg" alt="Vợt Pickleball Joola" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Joola</span>
+              <h3 class="product-name">Joola Gen 5</h3>
+              <p class="product-price">6.550.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Joola Gen 5', 6550000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+          <div class="product-item" data-brand="joola" data-category="vot">
+            <div class="product-img-wrapper">
+              <img src="img/joola_3.jpg" alt="Vợt Pickleball Joola" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Joola</span>
+              <h3 class="product-name">Joola Gen 5 Agassi Pro</h3>
+              <p class="product-price">6.550.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Joola Gen 5 Agassi Pro', 6550000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+          <div class="product-item" data-brand="joola" data-category="vot">
+            <div class="product-img-wrapper">
+              <img src="img/joola_4.jpg" alt="Vợt Pickleball Joola" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Joola</span>
+              <h3 class="product-name">Joola Gen 5 Hyperion</h3>
+              <p class="product-price">6.550.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Joola Gen 5 Hyperion', 6550000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+          <div class="product-item" data-brand="joola" data-category="vot">
+            <div class="product-img-wrapper">
+              <img src="img/joola_5.jpg" alt="Vợt Pickleball Joola" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Joola</span>
+              <h3 class="product-name">Joola Mod-ta 15</h3>
+              <p class="product-price">5.050.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Joola Mod-ta 15', 5050000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+          <div class="product-item" data-brand="joola" data-category="balo">
+            <div class="product-img-wrapper">
+              <img src="img/balo_joola1.jpg" alt="Balo Joola" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Joola</span>
+              <h3 class="product-name">
+                Balo Pickleball Joola Vision II Deluxe
+              </h3>
+              <p class="product-price">2.550.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Balo Pickleball Joola Vision II Deluxe', 2550000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+          <div class="product-item" data-brand="joola" data-category="balo">
+            <div class="product-img-wrapper">
+              <img src="img/balo_joola2.jpg" alt="Balo Joola" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Joola</span>
+              <h3 class="product-name">Balo Pickleball Joola Tour Elite Pro</h3>
+              <p class="product-price">2.850.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Balo Pickleball Joola Tour Elite Pro', 2850000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+          <div class="product-item" data-brand="joola" data-category="balo">
+            <div class="product-img-wrapper">
+              <img src="img/balo_joola5.jpg" alt="Balo Joola" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Joola</span>
+              <h3 class="product-name">Balo Pickleball Joola Tour Elite</h3>
+              <p class="product-price">2.350.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Balo Pickleball Joola Tour Elite', 2350000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="product-item"
+            data-brand="maxxsport"
+            data-category="quan-ao"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/Quan_ao3.jpg" alt="Quần Áo Thể Thao" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">MaxxSport</span>
+              <h3 class="product-name">Áo Thể Thao</h3>
+              <p class="product-price">499.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Áo Thể Thao', 499000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+          <div class="product-item" data-brand="adidas" data-category="giay">
+            <div class="product-img-wrapper">
+              <img src="img/Giay_pick9.jpg" alt="Giày Pickleball Adidas" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Adidas</span>
+              <h3 class="product-name">Giày Pickleball Adidas</h3>
+              <p class="product-price">4.250.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Giày Pickleball Adidas', 4250000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+          <div class="product-item" data-brand="asics" data-category="giay">
+            <div class="product-img-wrapper">
+              <img src="img/Giay_pick7.jpg" alt="Giày Pickleball Asics FF3" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Asics</span>
+              <h3 class="product-name">Giày Pickleball Asics FF3</h3>
+              <p class="product-price">4.550.000 đ</p>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Giày Pickleball Asics FF3', 4550000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script_sanpham.js"></script>
+  </body>
+</html>

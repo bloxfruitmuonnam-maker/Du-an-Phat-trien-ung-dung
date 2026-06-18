@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS_sale.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./icon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./icon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./icon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./icon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./icon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./icon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./icon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./icon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./icon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./icon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./icon/manifest.json" />
+
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="./icon/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Cửa Hàng Pickleball Cao Cấp - Amakirk</title>
+
+    <style>
+      :root {
+        --primary-color: #ff4757;
+        --secondary-color: #2ed573;
+        --dark-color: #2f3542;
+        --light-bg: #f1f2f6;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light-bg);
+        color: var(--dark-color);
+        padding-bottom: 60px;
+      }
+
+      header {
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        color: var(--dark-color);
+        letter-spacing: 1px;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        margin: 8px auto 0 auto;
+        border-radius: 2px;
+      }
+
+      /* Lưới sản phẩm thông minh */
+      .container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .product-item {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .product-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-img {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        background: #f9f9f9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .product-item:hover .product-img img {
+        transform: scale(1.08);
+      }
+
+      .product-info {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .product-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        height: 44px; /* Giới hạn 2 dòng */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+
+      .product-desc {
+        font-size: 0.9rem;
+        color: #747d8c;
+        margin-bottom: 15px;
+        height: 60px; /* Giới hạn 3 dòng */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+
+      .product-price {
+        font-size: 1.3rem;
+        color: var(--primary-color);
+        font-weight: 700;
+        margin-top: auto;
+        margin-bottom: 15px;
+      }
+
+      /* Nút Mua hàng */
+      .btn-buy {
+        background-color: var(--dark-color);
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+        width: 100%;
+      }
+
+      .btn-buy:hover {
+        background-color: var(--primary-color);
+      }
+
+      /* Khu vực Giỏ hàng và Form đặt hàng */
+      .checkout-section {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        margin-top: 50px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+      }
+
+      .checkout-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      @media (max-width: 768px) {
+        .checkout-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .cart-summary h3,
+      .order-form h3 {
+        margin-bottom: 20px;
+        border-bottom: 2px solid var(--light-bg);
+        padding-bottom: 10px;
+      }
+
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px dashed #eee;
+      }
+
+      .cart-item-remove {
+        color: var(--primary-color);
+        cursor: pointer;
+        font-size: 0.85rem;
+        margin-left: 10px;
+      }
+
+      .total-price {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        text-align: right;
+        margin-top: 20px;
+      }
+
+      /* Form nhập liệu */
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: var(--primary-color);
+        outline: none;
+      }
+
+      .btn-submit {
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        width: 100%;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+
+      .btn-submit:hover {
+        opacity: 0.9;
+      }
+
+      .empty-cart-msg {
+        color: #999;
+        text-align: center;
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="container header-flex">
+        <div class="logo">
+          <img src="img/logo1.jpg" alt="SPSP Logo" height="70" />
+        </div>
+        <div class="search-box">
+          <select name="category">
+            <option>Chuyên mục</option>
+            <option value="vot">Vợt Pickleball</option>
+            <option value="giay">Giày Thể Thao</option>
+            <option value="phu-kien">Phụ kiện</option>
+            <option value="quan-ao">Quần Áo Thể Thao</option>
+          </select>
+          <input type="text" placeholder="Tìm kiếm..." />
+          <button type="button">🔍</button>
+        </div>
+        <div class="cart">
+          <span id="header-cart-info">0 Sản phẩm: 0 đ</span>
+          <span class="cart-icon">🛒</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-bar">
+      <div class="container">
+        <ul class="menu">
+          <li><a href="./HTML.html">TRANG CHỦ</a></li>
+          <li><a href="./Gioithieu.html">GIỚI THIỆU</a></li>
+          <li class="active"><a href="./sanpham.html">SẢN PHẨM</a></li>
+          <li><a href="./sale.html">SALE OFF</a></li>
+          <li><a href="tintuc.html">TIN TỨC</a></li>
+          <li><a href="./lienhe.html">LIÊN HỆ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="./HTML.html" class="breadcrumb-item home">Trang chủ</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-item active">TẤT CẢ SẢN PHẨM</span>
+    </div>
+
+    <div class="container">
+      <div class="product-grid">
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/Vot_TOUR.jpg" alt="Vợt Amakirk Power" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Vợt Amakirk VT Tour Promax (3 Màu)</h3>
+            <p class="product-desc">
+              Dòng vợt cao cấp tối ưu cho lối chơi tấn công bùng nổ, kiểm soát
+              bóng tốt.
+            </p>
+            <div class="product-price">3.850.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Vợt Amakirk VT Tour Promax (3 Màu)', 3850000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/bong_amk.jpg" alt="Bóng Amakirk" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Quả Bóng Pickleball Amakirk 48 Lỗ</h3>
+            <p class="product-desc">
+              Độ bền cao, bay chuẩn xác, đạt tiêu chuẩn thi đấu quốc tế.
+            </p>
+            <div class="product-price">55.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Quả Bóng Pickleball Amakirk 48 Lỗ', 55000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/balo_amk.jpg" alt="Balo Amakirk" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Balo Thể Thao Amakirk Pro</h3>
+            <p class="product-desc">
+              Thiết kế chống nước, nhiều ngăn chứa vợt và phụ kiện tiện lợi.
+            </p>
+            <div class="product-price">1.950.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Balo Thể Thao Amakirk Pro', 1950000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/giay_jogabola1.jpg" alt="Giày Pickleball " />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Giày Pickleball Jogabola Votex</h3>
+            <p class="product-desc">
+              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
+              người chơi.
+            </p>
+            <div class="product-price">2.500.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Giày Pickleball Jogabola Votex', 2500000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/Giay_pick2.jpg" alt="Giày Pickleball " />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Giày Pickleball Skechers - Mẫu 2</h3>
+            <p class="product-desc">
+              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
+              người chơi.
+            </p>
+            <div class="product-price">4.550.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Giày Pickleball Skechers - Mẫu 2', 4550000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/Giay_pick3.jpg" alt="Giày Pickleball " />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Giày Pickleball Skechers - Mẫu 3</h3>
+            <p class="product-desc">
+              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
+              người chơi.
+            </p>
+            <div class="product-price">3.750.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Giày Pickleball Skechers - Mẫu 3', 3750000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/vot_amk4.jpg" alt="Vợt Amakirk 5.0" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Vợt Amakirk 5.0 - Control</h3>
+            <p class="product-desc">
+              Dòng vợt cao cấp tối ưu cho lối chơi tấn công bùng nổ, kiểm soát
+              bóng tốt.
+            </p>
+            <div class="product-price">3.250.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Vợt Amakirk 5.0 - Control', 3250000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/Quan_ao1.jpg" alt="Quần Áo Thể Thao" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Quần Áo Thể Thao</h3>
+            <p class="product-desc">Thoái mái dễ chịu giúp vận động tốt</p>
+            <div class="product-price">650.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Quần Áo Thể Thao', 650000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/Giay_pick6.jpg" alt="Giày Pickleball" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Giày Pickleball Asics FF3 - Bản 1</h3>
+            <p class="product-desc">
+              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
+              người chơi.
+            </p>
+            <div class="product-price">4.550.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Giày Pickleball Asics FF3 - Bản 1', 4550000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/Quan_ao3.jpg" alt="Quần Áo Thể Thao" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Áo Thể Thao Premium</h3>
+            <p class="product-desc">Thoái mái dễ chịu giúp vận động tốt.</p>
+            <div class="product-price">499.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Áo Thể Thao Premium', 499000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/Giay_pick9.jpg" alt="Giày Pickleball Adidas" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Giày Pickleball Adidas</h3>
+            <p class="product-desc">
+              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
+              người chơi.
+            </p>
+            <div class="product-price">4.250.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Giày Pickleball Adidas', 4250000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="img/Giay_pick7.jpg" alt="Giày Pickleball Asics FF3" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Giày Pickleball Asics FF3 - Bản 2</h3>
+            <p class="product-desc">
+              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
+              người chơi.
+            </p>
+            <div class="product-price">4.550.000 đ</div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Giày Pickleball Asics FF3 - Bản 2', 4550000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkout-section" id="checkout-area">
+        <div class="checkout-grid">
+          <div class="cart-summary">
+            <h3>🛒 Đơn Hàng Của Bạn</h3>
+            <div id="cart-content">
+              <p class="empty-cart-msg">Chưa có sản phẩm nào được chọn.</p>
+            </div>
+            <div class="total-price" id="cart-total">Tổng cộng: 0 đ</div>
+          </div>
+
+          <div class="order-form">
+            <h3>📝 Thông Tin Đặt Hàng</h3>
+            <form
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              id="purchase-form"
+            >
+              <input
+                type="hidden"
+                name="Chi_Tiet_Don_Hang"
+                id="form-cart-details"
+              />
+              <input type="hidden" name="Tong_Tien" id="form-cart-total" />
+
+              <div class="form-group">
+                <label for="name">Họ và Tên *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="Ho_Ten"
+                  placeholder="Ví dụ: Nguyễn Văn A"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Số Điện Thoại *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="So_Dien_Thoai"
+                  placeholder="Ví dụ: 0912345678"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="address">Địa Chỉ Nhận Hàng *</label>
+                <textarea
+                  id="address"
+                  name="Dia_Chi"
+                  rows="3"
+                  placeholder="Số nhà, tên đường, phường/xã, quận/huyện..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="note">Ghi Chú Thêm (Nếu có)</label>
+                <input
+                  type="text"
+                  id="note"
+                  name="Ghi_Chu"
+                  placeholder="Chọn size giày, màu sắc vợt..."
+                />
+              </div>
+
+              <button type="submit" class="btn-submit">
+                XÁC NHẬN ĐẶT HÀNG GIAO TẬN NƠI
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="sale.js"></script>
+  </body>
+</html>

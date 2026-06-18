@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="chitiet1.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./icon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./icon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./icon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./icon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./icon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./icon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./icon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./icon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./icon/android-icon-192x192.png"
+    />
+    <link
+      class="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icon/favicon-32x32.png"
+    />
+    <link
+      class="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./icon/favicon-96x96.png"
+    />
+    <link
+      class="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./icon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="./icon/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Sản Phẩm - MaxxSport</title>
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="container header-flex">
+        <div class="logo">
+          <img src="img/logo1.jpg" alt="SPSP Logo" height="70" />
+        </div>
+        <div class="search-box">
+          <select name="category">
+            <option>Chuyên mục</option>
+            <option value="vot">Vợt Pickleball</option>
+            <option value="giay">Giày Thể Thao</option>
+            <option value="phu-kien">Phụ kiện</option>
+            <option value="quan-ao">Quần Áo Thể Thao</option>
+          </select>
+          <input type="text" placeholder="Tìm kiếm..." />
+          <button type="button">🔍</button>
+        </div>
+        <div class="cart">
+          <span>0 Sản phẩm: 0 đ</span>
+          <span class="cart-icon">🛒</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-bar">
+      <div class="container">
+        <ul class="menu">
+          <li><a href="./HTML.html">TRANG CHỦ</a></li>
+          <li><a href="./Gioithieu.html">GIỚI THIỆU</a></li>
+          <li class="active"><a href="./sanpham.html">SẢN PHẨM</a></li>
+          <li><a href="./sale.html">SALE OFF</a></li>
+          <li><a href="tintuc.html">TIN TỨC</a></li>
+          <li><a href="./lienhe.html">LIÊN HỆ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="./sanpham.html" class="breadcrumb-item home">Sản phẩm</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-item active">CHI TIẾT SẢN PHẨM BALO AMAKIRK</span>
+    </div>
+
+    <main class="product-detail-container container">
+      <div class="product-layout">
+        <div class="product-images">
+          <div class="main-image">
+            <img
+              id="current-image"
+              src="img/balo_amk.jpg"
+              alt="Ảnh sản phẩm chính"
+            />
+          </div>
+          <div class="thumbnail-gallery">
+            <img
+              class="thumb active"
+              src="img/balo_amk.jpg"
+              alt="Thumb 1"
+              onclick="changeImage(this)"
+            />
+            <img
+              class="thumb"
+              src="img/balo_amk1.jpg"
+              alt="Thumb 2"
+              onclick="changeImage(this)"
+            />
+          </div>
+        </div>
+
+        <div class="product-info">
+          <div class="event-badge">Pickleball Challenge Amakirk 2026</div>
+          <h1 class="product-title">Balo Amakirk Pro</h1>
+          <p class="product-price">1.950.000 đ</p>
+
+          <div class="product-short-desc">
+            <p>🔥 BALO AMAKIRK PRO 🔥</p>
+          </div>
+
+          <div class="purchase-actions">
+            <div class="quantity-selector">
+              <button type="button" onclick="decreaseQty()">-</button>
+              <input type="number" id="qty" value="1" min="1" />
+              <button type="button" onclick="increaseQty()">+</button>
+            </div>
+            <button class="btn-add-cart">Thêm vào giỏ</button>
+            <button class="btn-buy-now">Mua ngay</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-tabs">
+        <div class="tab-headers">
+          <button
+            class="tab-btn active"
+            onclick="openTab(event, 'description')"
+          >
+            Mô tả chi tiết
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'reviews')">
+            Đánh giá
+          </button>
+        </div>
+
+        <div id="description" class="tab-content active">
+          <p>🔥 Balo Amakirk Pro 🔥</p>
+          <p>
+            Balo Amakirk Pro – Sự kết hợp hoàn hảo giữa thiết kế thời trang và
+            tính năng tiện ích, là người bạn đồng hành lý tưởng cho mọi hoạt
+            động thể thao của bạn. Với chất liệu cao cấp, thiết kế thông minh và
+            sự chú trọng đến chi tiết, Balo Amakirk Pro không chỉ giúp bạn bảo
+            vệ đồ đạc mà còn tôn lên phong cách cá nhân của bạn.
+          </p>
+        </div>
+
+        <div id="reviews" class="tab-content">
+          <p>Chưa có đánh giá nào.</p>
+        </div>
+      </div>
+    </main>
+
+    <script src="chitiet1.js"></script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+p {
+  font-size: 25px;
+  line-height: 1.5;
+}
+h1 {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 1. Thiết kế Top Header */
+.top-header {
+  background-color: #fff;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Thanh tìm kiếm */
+.search-box {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-box select,
+.search-box input,
+.search-box button {
+  padding: 8px 20px;
+  border: none;
+  outline: none;
+}
+
+.search-box select {
+  background-color: #f9f9f9;
+  border-right: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.search-box input {
+  width: 300px;
+}
+
+.search-box button {
+  background-color: #000000;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Giỏ hàng */
+.cart {
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.cart-icon {
+  background-color: #000000;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+/* 2. Thiết kế Thanh Điều Hướng (Nav Bar) */
+.nav-bar {
+  background-color: #1a1a1a;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  display: block;
+  padding: 15px 50px;
+  color: #bbb;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover,
+.menu li.active a {
+  color: #fff;
+  background-color: #2a2a2a;
+}
+
+/* Khung chứa breadcrumb */
+.breadcrumb {
+  padding: 15px 0; /* Tạo khoảng cách trên dưới */
+  font-size: 14px;
+  font-family: Arial, sans-serif; /* Hoặc font chữ dự án của bạn */
+  background-color: #e1dfdf; /* Màu nền xám nhạt phía dưới thanh header */
+  padding-left: 5%; /* Thụt lề vào trong cho thẳng hàng với logo */
+}
+
+/* Định dạng cho phần tử liên kết (Trang chủ) */
+.breadcrumb-item.home {
+  color: #5a5353; /* Màu xám nhạt như trong ảnh */
+  text-decoration: none; /* Bỏ gạch chân mặc định */
+  transition: color 0.2s ease;
+}
+
+/* Hiệu ứng khi người dùng di chuột vào chữ Trang chủ */
+.breadcrumb-item.home:hover {
+  color: #333; /* Đậm lên khi di chuột vào */
+  text-decoration: underline; /* Gạch chân để biết là click được */
+}
+
+/* Ký tự gạch chéo / */
+.breadcrumb-separator {
+  color: #999;
+  margin: 0 1px; /* Tạo khoảng cách 2 bên dấu / */
+}
+
+/* Trang hiện tại (THƯƠNG HIỆU) */
+.breadcrumb-item.active {
+  color: #000; /* Màu đen */
+  font-weight: 500; /* Hơi đậm lên một chút */
+}
+
+/*
+2. HERO BANNER (Khối Banner chính) */
+.hero-banner {
+  position: relative;
+  /* Bạn có thể thay link ảnh thể thao của bạn vào đây */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1600")
+      no-repeat center center/cover;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.btn-shop {
+  display: inline-block;
+  padding: 12px 35px;
+  background-color: #ff4757; /* Màu đỏ thể thao nổi bật */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+}
+
+.btn-shop:hover {
+  background-color: #e84118;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
+}
+
+/*3. CORE VALUES / FEATURES (Khối giá trị cốt lõi chia 3 cột)*/
+.about-features {
+  background-color: #fff;
+  text-align: center;
+}
+
+.about-features h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Tạo đường gạch chân nhỏ dưới tiêu đề cho đẹp */
+.about-features h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #ff4757;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.feature-item {
+  background: #fdfdfd;
+  padding: 30px 20px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-color: #ff4757;
+}
+
+.feature-item .icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.feature-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.feature-item p {
+  font-size: 0.95rem;
+  color: #666;
+}

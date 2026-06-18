@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #ffffff; /* Đổi thành nền trắng cho sang giống mẫu */
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* 1. Thiết kế Top Header */
+.top-header {
+  background-color: #fff;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Thanh tìm kiếm */
+.search-box {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-box select,
+.search-box input,
+.search-box button {
+  padding: 8px 20px;
+  border: none;
+  outline: none;
+}
+
+.search-box select {
+  background-color: #f9f9f9;
+  border-right: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.search-box input {
+  width: 300px;
+}
+
+.search-box button {
+  background-color: #000000;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Giỏ hàng */
+.cart {
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.cart-icon {
+  background-color: #000000;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+/* 2. Thiết kế Thanh Điều Hướng (Nav Bar) */
+.nav-bar {
+  background-color: #1a1a1a;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  display: block;
+  padding: 15px 40px;
+  color: #bbb;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover,
+.menu li.active a {
+  color: #fff;
+  background-color: #2a2a2a;
+}
+
+/* Khung chứa breadcrumb */
+.breadcrumb {
+  padding: 15px 5%;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f2f2;
+}
+
+.breadcrumb-item.home {
+  color: #8f8b8b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-item.home:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: #999;
+  margin: 0 5px;
+}
+
+.breadcrumb-item.active {
+  color: #000;
+  font-weight: 500;
+}
+
+.footer-col p a {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.footer-col p a:hover {
+  opacity: 1;
+  color: #ff0000;
+}
+
+.footer-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.footer-map {
+  flex: 1;
+  min-width: 300px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease;
+}
+
+.footer-map:hover {
+  border-color: #444;
+}
+
+@media (max-width: 768px) {
+  .footer-middle {
+    flex-direction: column;
+  }
+  .company-info,
+  .footer-map {
+    width: 100%;
+  }
+}
+/* Khung chứa breadcrumb */
+.breadcrumb {
+  padding: 15px 0; /* Tạo khoảng cách trên dưới */
+  font-size: 14px;
+  font-family: Arial, sans-serif; /* Hoặc font chữ dự án của bạn */
+  background-color: #f8f8f8; /* Màu nền xám nhạt phía dưới thanh header */
+  padding-left: 5%; /* Thụt lề vào trong cho thẳng hàng với logo */
+}
+
+/* Định dạng cho phần tử liên kết (Trang chủ) */
+.breadcrumb-item.home {
+  color: #999; /* Màu xám nhạt như trong ảnh */
+  text-decoration: none; /* Bỏ gạch chân mặc định */
+  transition: color 0.2s ease;
+}
+
+/* Hiệu ứng khi người dùng di chuột vào chữ Trang chủ */
+.breadcrumb-item.home:hover {
+  color: #333; /* Đậm lên khi di chuột vào */
+  text-decoration: underline; /* Gạch chân để biết là click được */
+}
+
+/* Ký tự gạch chéo / */
+.breadcrumb-separator {
+  color: #999;
+  margin: 0 10px; /* Tạo khoảng cách 2 bên dấu / */
+}
+
+/* Trang hiện tại (THƯƠNG HIỆU) */
+.breadcrumb-item.active {
+  color: #000; /* Màu đen */
+  font-weight: 500; /* Hơi đậm lên một chút */
+}

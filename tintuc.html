@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./icon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./icon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./icon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./icon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./icon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./icon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./icon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./icon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./icon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./icon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./icon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="./icon/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>SPS - Shop Thể Thao</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS_tintuc.css" />
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="container header-flex">
+        <div class="logo">
+          <img src="img/logo1.jpg" alt="SPSP Logo" width="130" height="70" />
+        </div>
+        <div class="lienhe">
+          <p>Hotline: <span id="hotline">0399 369 372</span></p>
+        </div>
+        <div class="search-box">
+          <select name="category">
+            <option>Chuyên mục</option>
+            <option value="vot">Vợt Pickleball</option>
+            <option value="giay">Giày Thể Thao</option>
+            <option value="phu-kien">Phụ kiện</option>
+            <option value="quan-ao">Quần Áo Thể Thao</option>
+          </select>
+          <input type="text" placeholder="Tìm kiếm..." />
+          <button type="button">🔍</button>
+        </div>
+        <div class="cart">
+          <span>0 Sản phẩm: 0 đ</span>
+          <span class="cart-icon">🛒</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-bar">
+      <div class="container">
+        <ul class="menu">
+          <li><a href="./HTML.html">TRANG CHỦ</a></li>
+          <li><a href="./Gioithieu.html">GIỚI THIỆU</a></li>
+          <li><a href="./sanpham.html">SẢN PHẨM</a></li>
+          <li><a href="./sale.html">SALE OFF</a></li>
+          <li><a href="./tintuc.html">TIN TỨC</a></li>
+          <li><a href="./lienhe.html">LIÊN HỆ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="./HTML.html" class="breadcrumb-item home">Trang chủ</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-item active">TIN TỨC</span>
+    </div>
+
+    <main class="news-container container">
+      <header class="news-page-header">
+        <h1 class="page-title">Bản Tin Thể Thao SPSP</h1>
+        <p class="page-subtitle">
+          Cập nhật tin tức sản phẩm, xu hướng thời trang và cẩm nang tập luyện
+          mới nhất
+        </p>
+      </header>
+
+      <div class="filter-wrapper">
+        <button class="filter-btn active" data-target="all">
+          Tất cả bài viết
+        </button>
+        <button class="filter-btn" data-target="hot">🔥 Tin nổi bật</button>
+        <button class="filter-btn" data-target="latest">📰 Tin mới nhất</button>
+        <button class="filter-btn" data-target="tips">💡 Mẹo luyện tập</button>
+      </div>
+
+      <div class="news-grid-layout">
+        <article class="custom-news-card" data-category="hot">
+          <div class="thumbnail-box">
+            <img
+              src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=600"
+              alt="Vợt Pickleball"
+            />
+            <span class="badge badge-hot">Nổi bật</span>
+          </div>
+          <div class="card-body-content">
+            <h3 class="post-title">
+              Cơn sốt Vợt Pickleball tiên tiến: Tại sao bộ môn này bùng nổ?
+            </h3>
+            <p class="post-excerpt">
+              Khám phá công nghệ lõi sợi carbon và bề mặt nhám thế hệ mới trên
+              các dòng vợt giúp kiểm soát bóng tối ưu, bứt phá giới hạn trong
+              năm nay.
+            </p>
+            <a href="./bai-viet-pickleball.html" class="readmore-link"
+              >Đọc thêm <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </article>
+
+        <article class="custom-news-card" data-category="latest">
+          <div class="thumbnail-box">
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600"
+              alt="Giày đá bóng"
+            />
+            <span class="badge badge-latest">Tin mới</span>
+          </div>
+          <div class="card-body-content">
+            <h3 class="post-title">
+              Cách chọn giày đá bóng và chạy bộ phù hợp theo dáng bàn chân
+            </h3>
+            <p class="post-excerpt">
+              Việc lựa chọn đôi giày êm ái, đúng kích cỡ không chỉ giúp bạn tăng
+              tốc tối đa mà còn bảo vệ đôi chân, giảm thiểu các chấn thương
+              không đáng có.
+            </p>
+            <a href="./bai-viet-chon-giay.html" class="readmore-link"
+              >Đọc thêm <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </article>
+
+        <article class="custom-news-card" data-category="latest">
+          <div class="thumbnail-box">
+            <img
+              src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=600"
+              alt="Thời trang thể thao"
+            />
+            <span class="badge badge-latest">Tin mới</span>
+          </div>
+          <div class="card-body-content">
+            <h3 class="post-title">
+              Xu hướng thời trang thể thao 2026: Phong cách năng động và đa năng
+            </h3>
+            <p class="post-excerpt">
+              Sự lên ngôi của các chất liệu vải thun co giãn, thấm hút mồ hôi
+              cực tốt giúp bạn tự tin từ phòng tập ra đến những buổi dạo phố
+              năng động cùng bạn bè.
+            </p>
+            <a href="./bai-viet-thoi-trang.html" class="readmore-link"
+              >Đọc thêm <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </article>
+
+        <article class="custom-news-card" data-category="tips">
+          <div class="thumbnail-box">
+            <img
+              src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600"
+              alt="Mẹo luyện tập"
+            />
+            <span class="badge badge-tips">Mẹo nhỏ</span>
+          </div>
+          <div class="card-body-content">
+            <h3 class="post-title">
+              Cẩm nang khởi động kỹ và bổ sung nước đúng cách khi vận động
+            </h3>
+            <p class="post-excerpt">
+              Đừng bỏ qua bước khởi động 10 phút trước trận đấu và nguyên tắc bù
+              nước, bù khoáng liên tục để cơ bắp luôn trong trạng thái bền bỉ
+              nhất.
+            </p>
+            <a href="./bai-viet-meo-tap.html" class="readmore-link"
+              >Đọc thêm <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-top container">
+        <div class="footer-col">
+          <h3>VỀ CHÚNG TÔI</h3>
+          <ul>
+            <li><a href="./gioithieu.html">Giới thiệu về SPSP</a></li>
+            <li><a href="./tuyendung.html">Tuyển dụng</a></li>
+            <li><a href="./hethong-cuahang.html">Hệ thống cửa hàng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+          <ul>
+            <li><a href="./Lienhe.html">Liên hệ góp ý</a></li>
+            <li>
+              <a href="./huongdan-muahang.html">Hướng dẫn mua hàng online</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>CHÍNH SÁCH</h3>
+          <ul>
+            <li><a href="./CSBM.html">Chính sách bảo mật</a></li>
+            <li><a href="./CSVC.html">Chính sách vận chuyển</a></li>
+            <li><a href="./CSDT.html">Chính sách đổi trả</a></li>
+            <li><a href="./QDSD.html">Quy định sử dụng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>LIÊN KẾT XÃ HỘI</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+          <h3 class="payment-title">PHƯƠNG THỨC THANH TOÁN</h3>
+          <div class="payment-icons">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="far fa-money-bill-alt"></i>
+          </div>
+        </div>
+      </div>
+
+      <hr class="footer-divider container" />
+
+      <div class="footer-middle container">
+        <div class="company-info">
+          <h2>Shop SPSP</h2>
+          <p><strong>CÔNG TY CỔ PHẦN THƯƠNG MẠI VÀ NỘI DUNG SPSP</strong></p>
+          <p><i class="fas fa-hashtag"></i> Mã số thuế: 0105841634</p>
+          <p>
+            <i class="fas fa-user-tie"></i> Người chịu trách nhiệm: Ông Lê Hồng
+            Phong.
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Địa chỉ: Tầng 4, tòa nhà 180
+            Triệu Việt Vương, Bùi Thị Xuân, Hai Bà Trưng, Hà Nội
+          </p>
+          <p>
+            <i class="fas fa-building"></i> Văn phòng giao dịch: Tầng 12A, Tòa
+            nhà Vinaconex Diamond (TTTM Chợ Mơ), 459C Bạch Mai, Hà Nội
+          </p>
+          <p>
+            <i class="fas fa-phone-alt"></i> Điện thoại: 024.36227912 - Fax:
+            024.36227913
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Shop SPSP. Tất cả các quyền được bảo hộ.</p>
+      </div>
+    </footer>
+
+    <script src="tintuc.js"></script>
+  </body>
+</html>
