@@ -106,6 +106,17 @@ body {
   font-size: 13px;
   transition: all 0.3s ease;
 }
+.menu li a:hover,
+.menu li.active a {
+  color: #343333;
+  background-color: #2a2a2a;
+}
+
+.menu li.active a {
+  background-color: #fbf9f9;
+  color: #111;
+}
+
 /* Khung chứa breadcrumb */
 .breadcrumb {
   padding: 15px 5%;

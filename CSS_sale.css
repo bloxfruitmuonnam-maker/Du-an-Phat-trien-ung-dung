@@ -109,8 +109,13 @@ body {
 }
 .menu li a:hover,
 .menu li.active a {
-  color: #fff;
+  color: #343333;
   background-color: #2a2a2a;
+}
+
+.menu li.active a {
+  background-color: #fbf9f9;
+  color: #111;
 }
 
 /* Breadcrumb */
@@ -345,4 +350,48 @@ body {
     flex-direction: column;
     gap: 15px;
   }
+}
+/* 1. Thiết lập vị trí tương đối để chứa tem giảm giá */
+.product-item {
+  position: relative; /* Rất quan trọng: giữ tem giảm giá nằm gọn bên trong khung sản phẩm */
+}
+
+/* 2. Thiết kế tem % giảm giá (Discount Badge) */
+.discount-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  border-radius: 4px;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(255, 71, 87, 0.4); /* Đổ bóng nhẹ màu đỏ */
+}
+
+/* 3. Bố cục chứa giá tiền */
+.price-box {
+  display: flex;
+  align-items: baseline; /* Căn chỉnh chân chữ cho đều nhau */
+  gap: 10px;
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
+/* 4. Định dạng Giá cũ (Gạch mờ) */
+.old-price {
+  font-size: 0.95rem;
+  color: #a4b0be; /* Màu xám mờ */
+  text-decoration: line-through; /* Tạo đường gạch ngang chữ */
+  font-weight: 500;
+}
+
+/* 5. Cập nhật lại định dạng Giá mới (Cho chuẩn với cấu trúc price-box) */
+.product-price {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin: 0; /* Xóa margin-top: auto cũ đi vì đã chuyển lên .price-box */
 }

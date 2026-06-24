@@ -1,66 +1,52 @@
-// Lấy dữ liệu từ kho lưu trữ localStorage khi vừa mở trang, nếu chưa có thì gán mảng rỗng
-let cart = JSON.parse(localStorage.getItem("maxxSportCart")) || [];
-
-// Hàm thêm sản phẩm vào giỏ
-function addToCart(name, price) {
-  const existingItem = cart.find((item) => item.name === name);
-  if (existingItem) {
-    existingItem.quantity += 1;
-  } else {
-    cart.push({ name: name, price: price, quantity: 1 });
-  }
-  localStorage.setItem("maxxSportCart", JSON.stringify(cart));
-
-  updateCartUI();
-  document
-    .getElementById("checkout-area")
-    .scrollIntoView({ behavior: "smooth" });
-
-  // Tự động cuộn mượt xuống khu vực đặt hàng
-  document
-    .getElementById("checkout-area")
-    .scrollIntoView({ behavior: "smooth" });
-}
-
-// Hàm xóa bớt sản phẩm khỏi giỏ
-function removeFromCart(index) {
-  cart.splice(index, 1);
-  localStorage.setItem("maxxSportCart", JSON.stringify(cart));
-  updateCartUI();
-}
+// =========================================================
+// XỬ LÝ HIỂN THỊ BẢNG THANH TOÁN (Dành riêng cho trang Sale)
+// =========================================================
 
 // Định dạng số tiền VND
 function formatMoney(amount) {
   return amount.toLocaleString("vi-VN") + " đ";
 }
 
-// Hàm cập nhật toàn bộ giao diện giỏ hàng
+// Hàm xóa bớt sản phẩm khỏi giỏ trong bảng thanh toán
+function removeFromCart(index) {
+  // Biến cart được lấy từ file cart.js chung
+  cart.splice(index, 1);
+  localStorage.setItem("maxxSportCart", JSON.stringify(cart));
+
+  // Gọi hàm updateHeaderCart từ file cart.js để cập nhật trên Header
+  if (typeof updateHeaderCart === "function") {
+    updateHeaderCart();
+  }
+
+  // Vẽ lại bảng thanh toán
+  updateCartUI();
+}
+
+// Hàm cập nhật toàn bộ giao diện bảng giỏ hàng ở dưới form
 function updateCartUI() {
   const cartContent = document.getElementById("cart-content");
   const cartTotal = document.getElementById("cart-total");
   const formCartDetails = document.getElementById("form-cart-details");
   const formCartTotal = document.getElementById("form-cart-total");
-  const headerCartInfo = document.getElementById("header-cart-info"); // Lấy thẻ trên Header
+
+  if (!cartContent) return; // Nếu không tìm thấy vùng vẽ thì bỏ qua
 
   if (cart.length === 0) {
     cartContent.innerHTML =
       '<p class="empty-cart-msg">Chưa có sản phẩm nào được chọn.</p>';
-    cartTotal.innerText = "Tổng cộng: 0 đ";
-    formCartDetails.value = "";
-    formCartTotal.value = "";
-    headerCartInfo.innerText = "0 Sản phẩm: 0 đ"; // Đồng bộ Header
+    if (cartTotal) cartTotal.innerText = "Tổng cộng: 0 đ";
+    if (formCartDetails) formCartDetails.value = "";
+    if (formCartTotal) formCartTotal.value = "";
     return;
   }
 
   let html = "";
   let total = 0;
-  let totalQuantity = 0;
   let textDetails = "";
 
   cart.forEach((item, index) => {
     let itemTotal = item.price * item.quantity;
     total += itemTotal;
-    totalQuantity += item.quantity;
     textDetails += `${item.name} (SL: ${item.quantity}) - Giá: ${formatMoney(itemTotal)} | `;
 
     html += `
@@ -78,18 +64,15 @@ function updateCartUI() {
   });
 
   cartContent.innerHTML = html;
-  cartTotal.innerText = "Tổng cộng: " + formatMoney(total);
-  formCartDetails.value = textDetails;
-  formCartTotal.value = formatMoney(total);
-
-  // Đồng bộ số lượng và tiền lên thanh Header
-  headerCartInfo.innerText = `${totalQuantity} Sản phẩm: ${formatMoney(total)}`;
+  if (cartTotal) cartTotal.innerText = "Tổng cộng: " + formatMoney(total);
+  if (formCartDetails) formCartDetails.value = textDetails;
+  if (formCartTotal) formCartTotal.value = formatMoney(total);
 }
 
 // Chặn gửi form nếu giỏ hàng rỗng
-document
-  .getElementById("purchase-form")
-  .addEventListener("submit", function (e) {
+const purchaseForm = document.getElementById("purchase-form");
+if (purchaseForm) {
+  purchaseForm.addEventListener("submit", function (e) {
     if (cart.length === 0) {
       e.preventDefault();
       alert(
@@ -97,6 +80,9 @@ document
       );
     }
   });
+}
 
-// KHỞI TẠO GIỎ HÀNG KHI MỞ TRANG
-updateCartUI();
+// Khởi tạo bảng giỏ hàng khi mở trang
+document.addEventListener("DOMContentLoaded", function () {
+  updateCartUI();
+});

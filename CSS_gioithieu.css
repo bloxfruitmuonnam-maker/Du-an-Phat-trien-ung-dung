@@ -111,8 +111,13 @@ body {
 
 .menu li a:hover,
 .menu li.active a {
-  color: #fff;
+  color: #343333;
   background-color: #2a2a2a;
+}
+
+.menu li.active a {
+  background-color: #fbf9f9;
+  color: #111;
 }
 
 /* Khung chứa breadcrumb */
@@ -261,4 +266,121 @@ body {
 .feature-item p {
   font-size: 0.95rem;
   color: #666;
+}
+/* ========================================================
+   CSS ĐỊNH DẠNG GIỎ HÀNG THẢ XUỐNG (DROPDOWN) Ở HEADER
+   ======================================================== */
+.header-cart-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.header-cart-toggle {
+  font-weight: bold;
+  color: #333;
+  padding: 8px 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.header-cart-toggle:hover {
+  background-color: #f0f0f0;
+}
+
+.header-cart-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 320px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  z-index: 1000;
+  display: none; /* Mặc định ẩn bảng giỏ hàng */
+}
+
+/* Class này sẽ được JS thêm vào để kích hoạt hiển thị */
+.header-cart-dropdown.show {
+  display: block;
+}
+
+.cart-dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+  font-size: 13px;
+}
+
+.cart-dropdown-item strong {
+  color: #333;
+}
+
+.cart-dropdown-item-remove {
+  color: #ff5722;
+  font-size: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.cart-dropdown-item-remove:hover {
+  transform: scale(1.2);
+}
+
+.empty-cart-msg {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  padding: 15px 0;
+}
+
+.header-dropdown-footer {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.btn-go-to-checkout {
+  display: block;
+  background-color: #d32f2f;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btn-go-to-checkout:hover {
+  background-color: #b71c1c;
+}
+.header-cart-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.header-cart-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 300px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  z-index: 1000;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.remove-btn {
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
 }

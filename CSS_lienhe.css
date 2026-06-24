@@ -103,8 +103,13 @@ body {
 
 .menu li a:hover,
 .menu li.active a {
-  color: #fff;
+  color: #343333;
   background-color: #2a2a2a;
+}
+
+.menu li.active a {
+  background-color: #fbf9f9;
+  color: #111;
 }
 
 /* Khung chứa breadcrumb */

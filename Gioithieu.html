@@ -96,9 +96,22 @@
           <input type="text" placeholder="Tìm kiếm..." />
           <button type="button">🔍</button>
         </div>
-        <div class="cart">
-          <span>0 Sản phẩm: 0 đ</span>
-          <span class="cart-icon">🛒</span>
+        <div class="header-cart-wrapper">
+          <div class="header-cart-toggle" onclick="toggleHeaderCart()">
+            <span id="header-cart-info">0 Sản phẩm: 0 đ</span>
+            <span class="cart-icon">🛒</span>
+          </div>
+
+          <div id="header-cart-dropdown" class="header-cart-dropdown">
+            <div id="header-dropdown-content">
+              <p class="empty-cart-msg">Chưa có sản phẩm nào.</p>
+            </div>
+            <div class="header-dropdown-footer">
+              <a href="./sale.html" class="btn-go-to-checkout"
+                >Đi đến thanh toán</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -106,8 +119,8 @@
     <nav class="nav-bar">
       <div class="container">
         <ul class="menu">
-          <li><a href="./HTML.html">TRANG CHỦ</a></li>
-          <li><a href="./Gioithieu.html">GIỚI THIỆU</a></li>
+          <li><a href="./index.html">TRANG CHỦ</a></li>
+          <li class="active"><a href="./Gioithieu.html">GIỚI THIỆU</a></li>
           <li><a href="./sanpham.html">SẢN PHẨM</a></li>
           <li><a href="./sale.html">SALE OFF</a></li>
           <li><a href="./tintuc.html">TIN TỨC</a></li>
@@ -152,5 +165,6 @@
         </div>
       </div>
     </section>
+    <script src="cart.js"></script>
   </body>
 </html>

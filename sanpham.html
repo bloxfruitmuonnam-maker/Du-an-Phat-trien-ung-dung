@@ -118,18 +118,18 @@
     <nav class="nav-bar">
       <div class="container">
         <ul class="menu">
-          <li><a href="./HTML.html">TRANG CHỦ</a></li>
+          <li><a href="./index.html">TRANG CHỦ</a></li>
           <li><a href="./Gioithieu.html">GIỚI THIỆU</a></li>
           <li class="active"><a href="./sanpham.html">SẢN PHẨM</a></li>
           <li><a href="./sale.html">SALE OFF</a></li>
-          <li><a href="tintuc.html">TIN TỨC</a></li>
+          <li><a href="./tintuc.html">TIN TỨC</a></li>
           <li><a href="./lienhe.html">LIÊN HỆ</a></li>
         </ul>
       </div>
     </nav>
 
     <div class="breadcrumb">
-      <a href="./HTML.html" class="breadcrumb-item home">Trang chủ</a>
+      <a href="./index.html" class="breadcrumb-item home">Trang chủ</a>
       <span class="breadcrumb-separator">/</span>
       <span class="breadcrumb-item active">TẤT CẢ SẢN PHẨM</span>
     </div>
@@ -509,6 +509,35 @@
           </div>
 
           <a
+            href="chitiet12.html"
+            class="product-item"
+            data-brand="asics"
+            data-category="giay"
+          >
+            <div class="product-img-wrapper">
+              <img src="img/Giay_kaiwin1.jpg" alt="Giày Pickleball" />
+            </div>
+            <div class="product-info">
+              <span class="brand-name">Asics</span>
+              <h3 class="product-name">Giày Pickleball Kaiwin Balance</h3>
+              <div class="price-box">
+                <span class="old-price">3.250.000đ</span>
+                <span class="new-price">2.550.000đ</span>
+              </div>
+              <div class="product-status">Còn hàng</div>
+              <button
+                class="btn-buy-now"
+                onclick="
+                  event.preventDefault();
+                  addToCart('Giày Pickleball Kaiwin Balance', 2550000);
+                "
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </a>
+
+          <a
             href="chitiet10.html"
             class="product-item"
             data-brand="asics"
@@ -804,5 +833,6 @@
     </div>
 
     <script src="script_sanpham.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>

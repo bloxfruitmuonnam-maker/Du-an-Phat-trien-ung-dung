@@ -1,5 +1,5 @@
 // =========================================================
-// 1. XỬ LÝ LOGIC BỘ LỌC SẢN PHẨM (CODE CŨ CỦA BẠN)
+// XỬ LÝ LOGIC BỘ LỌC SẢN PHẨM
 // =========================================================
 const brandCheckboxes = document.querySelectorAll(".brand-filter");
 const categoryCheckboxes = document.querySelectorAll(".category-filter");
@@ -54,56 +54,8 @@ if (toggleBtn) {
 }
 
 // =========================================================
-// 2. XỬ LÝ ĐỒNG BỘ GIỎ HÀNG VÀ DROPDOWN HEADER (MỚI)
+// XỬ LÝ DROPDOWN GIỎ HÀNG (Dành riêng cho trang Sản phẩm/Trang chủ)
 // =========================================================
-
-// Khởi tạo giỏ hàng từ localStorage
-let cart = JSON.parse(localStorage.getItem("maxxSportCart")) || [];
-
-// Hàm cập nhật chữ hiển thị tổng số lượng & tổng tiền trên Header
-function updateHeaderCart() {
-  const headerCartInfo = document.getElementById("header-cart-info");
-  if (!headerCartInfo) return;
-
-  if (cart.length === 0) {
-    headerCartInfo.innerText = "0 Sản phẩm: 0 đ";
-    return;
-  }
-
-  let totalQuantity = 0;
-  let totalAmount = 0;
-
-  cart.forEach((item) => {
-    totalQuantity += item.quantity;
-    totalAmount += item.price * item.quantity;
-  });
-
-  headerCartInfo.innerText = `${totalQuantity} Sản phẩm: ${totalAmount.toLocaleString("vi-VN")} đ`;
-}
-
-// Hàm thêm sản phẩm từ trang Sản Phẩm vào giỏ
-function addToCart(name, price) {
-  const existingItem = cart.find((item) => item.name === name);
-
-  if (existingItem) {
-    existingItem.quantity += 1;
-  } else {
-    cart.push({ name: name, price: price, quantity: 1 });
-  }
-
-  // Lưu dữ liệu vào localStorage để các trang khác cùng đọc
-  localStorage.setItem("maxxSportCart", JSON.stringify(cart));
-
-  updateHeaderCart();
-
-  // Nếu bảng chi tiết đang mở thì vẽ lại luôn dữ liệu mới
-  const dropdown = document.getElementById("cart-dropdown");
-  if (dropdown && dropdown.style.display === "block") {
-    renderCartDropdown();
-  }
-
-  alert(`Đã thêm "${name}" vào giỏ hàng thành công!`);
-}
 
 // Hàm Ẩn / Hiện bảng giỏ hàng nhỏ khi bấm vào ô giỏ hàng ở Header
 function toggleCartDropdown() {
@@ -118,11 +70,12 @@ function toggleCartDropdown() {
   }
 }
 
-// Hàm render (vẽ) danh sách sản phẩm trong bảng nhỏ và tạo nút Xóa
+// Hàm render (vẽ) danh sách sản phẩm trong bảng nhỏ
 function renderCartDropdown() {
   const container = document.getElementById("cart-dropdown-items");
   if (!container) return;
 
+  // Gọi mảng cart từ file cart.js dùng chung
   if (cart.length === 0) {
     container.innerHTML =
       '<p style="font-size:13px; color:#888; text-align:center; padding:15px 0;">Giỏ hàng của bạn đang trống.</p>';
@@ -144,15 +97,14 @@ function renderCartDropdown() {
   container.innerHTML = html;
 }
 
-// Hàm xử lý khi khách click vào nút ❌ trên Header để loại bỏ sản phẩm
+// Hàm xử lý khi khách click vào nút ❌ trên Header
 function removeFromHeaderCart(index) {
-  cart.splice(index, 1); // Xóa khỏi mảng dữ liệu
+  cart.splice(index, 1);
+  localStorage.setItem("maxxSportCart", JSON.stringify(cart));
 
-  localStorage.setItem("maxxSportCart", JSON.stringify(cart)); // Ghi đè lại localStorage sạch
-
-  updateHeaderCart(); // Cập nhật lại số tiền trên Header chính
-  renderCartDropdown(); // Cập nhật lại danh sách sản phẩm đang hiển thị trong bảng nhỏ
+  // Gọi hàm updateHeaderCart từ file cart.js
+  if (typeof updateHeaderCart === "function") {
+    updateHeaderCart();
+  }
+  renderCartDropdown();
 }
-
-// Tự động chạy hàm cập nhật số liệu hiển thị Header ngay khi tải trang sản phẩm
-updateHeaderCart();
