@@ -1,22 +1,16 @@
-// =========================================================
-// 1. XỬ LÝ SLIDER BANNER TỰ ĐỘNG VÀ THỦ CÔNG
-// =========================================================
 let slideIndex = 1;
 let slideTimer;
 
-// Chạy hàm hiển thị slide đầu tiên khi tải trang
 showSlides(slideIndex);
-// Bắt đầu chu trình tự động chuyển ảnh
+
 autoSlides();
 
-// Hàm điều khiển thủ công khi click vào chấm tròn
 function currentSlide(n) {
   clearTimeout(slideTimer);
   showSlides((slideIndex = n));
   autoSlides();
 }
 
-// Hàm xử lý hiển thị ẩn/hiện logic
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("slide");
@@ -41,7 +35,6 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
-// Hàm tự động chuyển slide sau mỗi 3 giây
 function autoSlides() {
   slideTimer = setTimeout(function () {
     slideIndex++;
@@ -50,54 +43,57 @@ function autoSlides() {
   }, 3000);
 }
 
-// =========================================================
-// 2. XỬ LÝ CUỘN (SCROLL) DANH SÁCH SẢN PHẨM & THANH TIẾN TRÌNH
-// =========================================================
 document.addEventListener("DOMContentLoaded", function () {
-  const productGrid = document.querySelector(".section-product-grid");
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
-  const progressBar = document.querySelector(".progress-bar-line");
+  const productGrids = document.querySelectorAll(".section-product-grid");
 
-  // Dừng lại nếu trang không có khối sản phẩm cuộn (tránh lỗi log)
-  if (!productGrid) return;
+  productGrids.forEach((productGrid) => {
+    const sectionContainer = productGrid.parentElement;
 
-  const scrollAmount = 300;
+    const prevBtn = sectionContainer.querySelector(".prev-btn");
+    const nextBtn = sectionContainer.querySelector(".next-btn");
+    const progressBar = sectionContainer.querySelector(".progress-bar-line");
 
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      productGrid.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    });
-  }
+    const scrollAmount = 300;
 
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-      productGrid.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    });
-  }
-
-  productGrid.addEventListener("scroll", () => {
-    const maxScrollLeft = productGrid.scrollWidth - productGrid.clientWidth;
-    const scrollPercentage = (productGrid.scrollLeft / maxScrollLeft) * 100;
-
-    if (progressBar) {
-      progressBar.style.width = scrollPercentage + "%";
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        productGrid.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
     }
 
     if (prevBtn) {
-      if (productGrid.scrollLeft === 0) {
-        prevBtn.classList.remove("active");
-      } else {
-        prevBtn.classList.add("active");
-      }
+      prevBtn.addEventListener("click", () => {
+        productGrid.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      });
     }
 
-    if (nextBtn) {
-      if (productGrid.scrollLeft >= maxScrollLeft - 1) {
-        nextBtn.classList.remove("active");
-      } else {
-        nextBtn.classList.add("active");
+    productGrid.addEventListener("scroll", () => {
+      const maxScrollLeft = productGrid.scrollWidth - productGrid.clientWidth;
+
+      let scrollPercentage = 0;
+      if (maxScrollLeft > 0) {
+        scrollPercentage = (productGrid.scrollLeft / maxScrollLeft) * 100;
       }
-    }
+
+      if (progressBar) {
+        progressBar.style.width = scrollPercentage + "%";
+      }
+
+      if (prevBtn) {
+        if (productGrid.scrollLeft === 0) {
+          prevBtn.classList.remove("active");
+        } else {
+          prevBtn.classList.add("active");
+        }
+      }
+
+      if (nextBtn) {
+        if (Math.ceil(productGrid.scrollLeft) >= maxScrollLeft) {
+          nextBtn.classList.remove("active");
+        } else {
+          nextBtn.classList.add("active");
+        }
+      }
+    });
   });
 });

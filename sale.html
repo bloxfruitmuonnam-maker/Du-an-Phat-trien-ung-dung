@@ -99,7 +99,11 @@
           <input type="text" placeholder="Tìm kiếm..." />
           <button type="button">🔍</button>
         </div>
-        <div class="cart">
+        <div
+          class="cart"
+          onclick="location.href = './checkout.html'"
+          style="cursor: pointer"
+        >
           <span id="header-cart-info">0 Sản phẩm: 0 đ</span>
           <span class="cart-icon">🛒</span>
         </div>
@@ -125,18 +129,30 @@
       <span class="breadcrumb-item active">TẤT CẢ SẢN PHẨM</span>
     </div>
 
+    <div class="container mt-30">
+      <div class="sale-banner">
+        <div class="sale-banner-content">
+          <div class="badge-event">SỰ KIỆN ĐẶC BIỆT</div>
+          <h1 class="flash-sale-title">PICKLEBALL CHALLENGE MỸ ĐÌNH 2026</h1>
+          <div class="countdown">
+            <div class="time-box"><span id="days">05</span>Ngày</div>
+            <div class="time-box"><span id="hours">12</span>Giờ</div>
+            <div class="time-box"><span id="minutes">45</span>Phút</div>
+            <div class="time-box"><span id="seconds">30</span>Giây</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <div class="product-grid">
         <div class="product-item">
-          <div class="product-img">
+          <span class="discount-badge">-14%</span>
+          <a href="chitiet1.html" class="product-img">
             <img src="img/Vot_TOUR.jpg" alt="Vợt Amakirk Power" />
-          </div>
+          </a>
           <div class="product-info">
             <h3 class="product-name">Vợt Amakirk VT Tour Promax (3 Màu)</h3>
-            <p class="product-desc">
-              Dòng vợt cao cấp tối ưu cho lối chơi tấn công bùng nổ, kiểm soát
-              bóng tốt.
-            </p>
             <div class="price-box">
               <span class="old-price">4.500.000 đ</span>
               <span class="product-price">3.850.000 đ</span>
@@ -151,14 +167,12 @@
         </div>
 
         <div class="product-item">
-          <div class="product-img">
+          <span class="discount-badge">-39%</span>
+          <a href="chitiet2.html" class="product-img">
             <img src="img/bong_amk.jpg" alt="Bóng Amakirk" />
-          </div>
+          </a>
           <div class="product-info">
             <h3 class="product-name">Quả Bóng Pickleball Amakirk 48 Lỗ</h3>
-            <p class="product-desc">
-              Độ bền cao, bay chuẩn xác, đạt tiêu chuẩn thi đấu quốc tế.
-            </p>
             <div class="price-box">
               <span class="old-price">90.000 đ</span>
               <span class="product-price">55.000 đ</span>
@@ -173,14 +187,12 @@
         </div>
 
         <div class="product-item">
+          <span class="discount-badge">-11%</span>
           <div class="product-img">
             <img src="img/balo_amk.jpg" alt="Balo Amakirk" />
           </div>
           <div class="product-info">
             <h3 class="product-name">Balo Thể Thao Amakirk Pro</h3>
-            <p class="product-desc">
-              Thiết kế chống nước, nhiều ngăn chứa vợt và phụ kiện tiện lợi.
-            </p>
             <div class="price-box">
               <span class="old-price">2.200.000 đ</span>
               <span class="product-price">1.950.000 đ</span>
@@ -195,15 +207,12 @@
         </div>
 
         <div class="product-item">
-          <div class="product-img">
+          <span class="discount-badge hot-badge">-42%</span>
+          <a href="chitiet7.html" class="product-img">
             <img src="img/giay_jogabola1.jpg" alt="Giày Pickleball " />
-          </div>
+          </a>
           <div class="product-info">
             <h3 class="product-name">Giày Pickleball Jogabola Votex</h3>
-            <p class="product-desc">
-              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
-              người chơi.
-            </p>
             <div class="price-box">
               <span class="old-price">3.000.000 đ</span>
               <span class="product-price">1.750.000 đ</span>
@@ -218,15 +227,12 @@
         </div>
 
         <div class="product-item">
+          <span class="discount-badge">-23%</span>
           <div class="product-img">
             <img src="img/Giay_pick2.jpg" alt="Giày Pickleball " />
           </div>
           <div class="product-info">
             <h3 class="product-name">Giày Pickleball Skechers - Mẫu 2</h3>
-            <p class="product-desc">
-              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
-              người chơi.
-            </p>
             <div class="price-box">
               <span class="old-price">3.550.000 đ</span>
               <span class="product-price">2.750.000 đ</span>
@@ -241,15 +247,12 @@
         </div>
 
         <div class="product-item">
+          <span class="discount-badge">-27%</span>
           <div class="product-img">
             <img src="img/Giay_pick3.jpg" alt="Giày Pickleball " />
           </div>
           <div class="product-info">
             <h3 class="product-name">Giày Pickleball Skechers - Mẫu 3</h3>
-            <p class="product-desc">
-              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
-              người chơi.
-            </p>
             <div class="price-box">
               <span class="old-price">3.750.000 đ</span>
               <span class="product-price">2.750.000 đ</span>
@@ -264,15 +267,12 @@
         </div>
 
         <div class="product-item">
-          <div class="product-img">
+          <span class="discount-badge">-12%</span>
+          <a href="chitiet8.html" class="product-img">
             <img src="img/vot_amk4.jpg" alt="Vợt Amakirk 5.0" />
-          </div>
+          </a>
           <div class="product-info">
             <h3 class="product-name">Vợt Amakirk 5.0 - Control</h3>
-            <p class="product-desc">
-              Dòng vợt cao cấp tối ưu cho lối chơi tấn công bùng nổ, kiểm soát
-              bóng tốt.
-            </p>
             <div class="price-box">
               <span class="old-price">3.250.000 đ</span>
               <span class="product-price">2.850.000 đ</span>
@@ -287,12 +287,12 @@
         </div>
 
         <div class="product-item">
+          <span class="discount-badge">-7%</span>
           <div class="product-img">
             <img src="img/Quan_ao1.jpg" alt="Quần Áo Thể Thao" />
           </div>
           <div class="product-info">
             <h3 class="product-name">Quần Áo Thể Thao</h3>
-            <p class="product-desc">Thoái mái dễ chịu giúp vận động tốt</p>
             <div class="price-box">
               <span class="old-price">700.000 đ</span>
               <span class="product-price">650.000 đ</span>
@@ -307,15 +307,12 @@
         </div>
 
         <div class="product-item">
+          <span class="discount-badge">-18%</span>
           <div class="product-img">
             <img src="img/Giay_pick6.jpg" alt="Giày Pickleball" />
           </div>
           <div class="product-info">
             <h3 class="product-name">Giày Pickleball Asics FF3 - Bản 1</h3>
-            <p class="product-desc">
-              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
-              người chơi.
-            </p>
             <div class="price-box">
               <span class="old-price">4.550.000 đ</span>
               <span class="product-price">3.750.000 đ</span>
@@ -330,12 +327,12 @@
         </div>
 
         <div class="product-item">
+          <span class="discount-badge">-9%</span>
           <div class="product-img">
             <img src="img/Quan_ao3.jpg" alt="Quần Áo Thể Thao" />
           </div>
           <div class="product-info">
             <h3 class="product-name">Áo Thể Thao Premium</h3>
-            <p class="product-desc">Thoái mái dễ chịu giúp vận động tốt.</p>
             <div class="price-box">
               <span class="old-price">550.000 đ</span>
               <span class="product-price">499.000 đ</span>
@@ -350,15 +347,12 @@
         </div>
 
         <div class="product-item">
+          <span class="discount-badge">-19%</span>
           <div class="product-img">
             <img src="img/Giay_pick9.jpg" alt="Giày Pickleball Adidas" />
           </div>
           <div class="product-info">
             <h3 class="product-name">Giày Pickleball Adidas</h3>
-            <p class="product-desc">
-              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
-              người chơi.
-            </p>
             <div class="price-box">
               <span class="old-price">4.250.000 đ</span>
               <span class="product-price">3.450.000 đ</span>
@@ -373,15 +367,12 @@
         </div>
 
         <div class="product-item">
+          <span class="discount-badge">-22%</span>
           <div class="product-img">
             <img src="img/Giay_pick7.jpg" alt="Giày Pickleball Asics FF3" />
           </div>
           <div class="product-info">
             <h3 class="product-name">Giày Pickleball Asics FF3 - Bản 2</h3>
-            <p class="product-desc">
-              Thiết kế thời trang và công nghệ đệm êm ái, hỗ trợ tối đa cho
-              người chơi.
-            </p>
             <div class="price-box">
               <span class="old-price">4.550.000 đ</span>
               <span class="product-price">3.550.000 đ</span>
@@ -392,81 +383,6 @@
             >
               Thêm Vào Giỏ Hàng
             </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="checkout-section" id="checkout-area">
-        <div class="checkout-grid">
-          <div class="cart-summary">
-            <h3>🛒 Đơn Hàng Của Bạn</h3>
-            <div id="cart-content">
-              <p class="empty-cart-msg">Chưa có sản phẩm nào được chọn.</p>
-            </div>
-            <div class="total-price" id="cart-total">Tổng cộng: 0 đ</div>
-          </div>
-
-          <div class="order-form">
-            <h3>📝 Thông Tin Đặt Hàng</h3>
-            <form
-              action="https://formspree.io/f/YOUR_FORM_ID"
-              method="POST"
-              id="purchase-form"
-            >
-              <input
-                type="hidden"
-                name="Chi_Tiet_Don_Hang"
-                id="form-cart-details"
-              />
-              <input type="hidden" name="Tong_Tien" id="form-cart-total" />
-
-              <div class="form-group">
-                <label for="name">Họ và Tên *</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="Ho_Ten"
-                  placeholder="Ví dụ: Nguyễn Văn A"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="phone">Số Điện Thoại *</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="So_Dien_Thoai"
-                  placeholder="Ví dụ: 0912345678"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="address">Địa Chỉ Nhận Hàng *</label>
-                <textarea
-                  id="address"
-                  name="Dia_Chi"
-                  rows="3"
-                  placeholder="Số nhà, tên đường, phường/xã, quận/huyện..."
-                  required
-                ></textarea>
-              </div>
-
-              <div class="form-group">
-                <label for="note">Ghi Chú Thêm (Nếu có)</label>
-                <input
-                  type="text"
-                  id="note"
-                  name="Ghi_Chu"
-                  placeholder="Chọn size giày, màu sắc vợt..."
-                />
-              </div>
-
-              <button type="submit" class="btn-submit">
-                XÁC NHẬN ĐẶT HÀNG GIAO TẬN NƠI
-              </button>
-            </form>
           </div>
         </div>
       </div>

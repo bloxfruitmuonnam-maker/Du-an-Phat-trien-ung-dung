@@ -81,6 +81,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="CSS_tintuc.css" />
   </head>
   <body>
@@ -103,7 +107,11 @@
           <input type="text" placeholder="Tìm kiếm..." />
           <button type="button">🔍</button>
         </div>
-        <div class="cart">
+        <div
+          class="cart"
+          onclick="location.href = './checkout.html'"
+          style="cursor: pointer"
+        >
           <span id="header-cart-info">0 Sản phẩm: 0 đ</span>
           <span class="cart-icon">🛒</span>
         </div>
@@ -273,15 +281,53 @@
         <div class="footer-col">
           <h3>LIÊN KẾT XÃ HỘI</h3>
           <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://youtube.com/" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://instagram.com/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
           </div>
+
           <h3 class="payment-title">PHƯƠNG THỨC THANH TOÁN</h3>
           <div class="payment-icons">
-            <i class="fab fa-cc-visa"></i>
-            <i class="fab fa-cc-mastercard"></i>
-            <i class="far fa-money-bill-alt"></i>
+            <img
+              src="img/visa.jpg"
+              alt="Visa"
+              class="payment-img"
+              title="Thanh toán Visa"
+            />
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+              alt="Mastercard"
+              class="payment-img"
+              title="Thanh toán Mastercard"
+            />
+
+            <img
+              src="img/momo.jpg"
+              alt="Ví MoMo"
+              class="payment-img"
+              title="Ví MoMo"
+            />
+
+            <img
+              src="img/zalopay.jpg"
+              alt="ZaloPay"
+              class="payment-img"
+              title="Ví ZaloPay"
+            />
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
+              alt="Quét mã QR"
+              class="payment-img qr-icon"
+              title="Thanh toán quét mã QR"
+            />
           </div>
         </div>
       </div>

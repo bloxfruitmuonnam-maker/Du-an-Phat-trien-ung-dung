@@ -1,35 +1,25 @@
-// =========================================================
-// XỬ LÝ HIỂN THỊ BẢNG THANH TOÁN (Dành riêng cho trang Sale)
-// =========================================================
-
-// Định dạng số tiền VND
 function formatMoney(amount) {
   return amount.toLocaleString("vi-VN") + " đ";
 }
 
-// Hàm xóa bớt sản phẩm khỏi giỏ trong bảng thanh toán
 function removeFromCart(index) {
-  // Biến cart được lấy từ file cart.js chung
   cart.splice(index, 1);
   localStorage.setItem("maxxSportCart", JSON.stringify(cart));
 
-  // Gọi hàm updateHeaderCart từ file cart.js để cập nhật trên Header
   if (typeof updateHeaderCart === "function") {
     updateHeaderCart();
   }
 
-  // Vẽ lại bảng thanh toán
   updateCartUI();
 }
 
-// Hàm cập nhật toàn bộ giao diện bảng giỏ hàng ở dưới form
 function updateCartUI() {
   const cartContent = document.getElementById("cart-content");
   const cartTotal = document.getElementById("cart-total");
   const formCartDetails = document.getElementById("form-cart-details");
   const formCartTotal = document.getElementById("form-cart-total");
 
-  if (!cartContent) return; // Nếu không tìm thấy vùng vẽ thì bỏ qua
+  if (!cartContent) return;
 
   if (cart.length === 0) {
     cartContent.innerHTML =
@@ -69,7 +59,6 @@ function updateCartUI() {
   if (formCartTotal) formCartTotal.value = formatMoney(total);
 }
 
-// Chặn gửi form nếu giỏ hàng rỗng
 const purchaseForm = document.getElementById("purchase-form");
 if (purchaseForm) {
   purchaseForm.addEventListener("submit", function (e) {
@@ -82,7 +71,6 @@ if (purchaseForm) {
   });
 }
 
-// Khởi tạo bảng giỏ hàng khi mở trang
 document.addEventListener("DOMContentLoaded", function () {
   updateCartUI();
 });

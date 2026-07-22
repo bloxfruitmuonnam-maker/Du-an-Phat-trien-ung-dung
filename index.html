@@ -104,7 +104,11 @@
           <button type="button">🔍</button>
         </div>
         <div class="header-cart-wrapper">
-          <div class="header-cart-toggle" onclick="toggleHeaderCart()">
+          <div
+            class="cart"
+            onclick="location.href = './checkout.html'"
+            style="cursor: pointer"
+          >
             <span id="header-cart-info">0 Sản phẩm: 0 đ</span>
             <span class="cart-icon">🛒</span>
           </div>
@@ -136,7 +140,7 @@
       </div>
     </nav>
 
-    <main class="container">
+    <main>
       <section class="hero-banner">
         <!-- Khung chứa các ảnh slide -->
         <div class="slides-container">
@@ -163,33 +167,33 @@
     <div class="sale-container">
       <h2 class="sale-title">SPECIAL SALE !</h2>
       <div class="product-grid">
-        <div class="product-card">
+        <a href="chitiet19.html" class="product-card">
           <div class="product-img">
-            <img src="img/Quan_ao2.jpg" alt="Áo thể thao" />
+            <img src="img/franklin1.jpg" alt="Áo thể thao" />
           </div>
           <div class="product-info">
             <h3 class="product-name">Áo thể thao</h3>
             <div class="price-box">
-              <span class="old-price">850.000đ</span>
-              <span class="new-price">475.000đ</span>
+              <span class="old-price">5.850.000đ</span>
+              <span class="new-price">4.550.000đ</span>
             </div>
             <div class="product-status">Còn hàng</div>
           </div>
-        </div>
+        </a>
 
-        <div class="product-card">
+        <a href="chitiet13.html" class="product-card">
           <div class="product-img">
-            <img src="img/Quan_ao3.jpg" alt="Áo thể thao mẫu 2" />
+            <img src="img/Leopard1.jpg" alt="Áo thể thao mẫu 2" />
           </div>
           <div class="product-info">
-            <h3 class="product-name">Áo thể thao</h3>
+            <h3 class="product-name">Vợt Leopard Ngũ Hành</h3>
             <div class="price-box">
-              <span class="old-price">750.000đ</span>
-              <span class="new-price">375.000đ</span>
+              <span class="old-price">3.850.000đ</span>
+              <span class="new-price">2.650.000đ</span>
             </div>
             <div class="product-status">Còn hàng</div>
           </div>
-        </div>
+        </a>
 
         <a href="chitiet4.html" class="product-card">
           <div class="product-img">
@@ -228,6 +232,20 @@
             <div class="price-box">
               <span class="old-price">5.950.000đ</span>
               <span class="new-price">5.550.000đ</span>
+            </div>
+            <div class="product-status">Còn hàng</div>
+          </div>
+        </a>
+
+        <a href="chitiet16.html" class="product-card">
+          <div class="product-img">
+            <img src="img/alphaP1.jpg" alt="Vợt Kamito Alpha X" />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Kamito Alpha X</h3>
+            <div class="price-box">
+              <span class="old-price">3.950.000đ</span>
+              <span class="new-price">3.250.000đ</span>
             </div>
             <div class="product-status">Còn hàng</div>
           </div>
@@ -354,9 +372,9 @@
           <div class="card-badge-shop">
             <img src="img/logo1.jpg" alt="Shop logo" />
           </div>
-          <div class="mini-product-img">
+          <a href="chitiet12.html" class="mini-product-img">
             <img src="img/Giay_kaiwin1.jpg" alt="Giày Kaiwin Diamond" />
-          </div>
+          </a>
           <div class="mini-product-info">
             <h3 class="mini-product-name">Giày Kaiwin Diamond</h3>
             <div class="mini-price-box">
@@ -372,9 +390,9 @@
           <div class="card-badge-shop">
             <img src="img/logo1.jpg" alt="Shop logo" />
           </div>
-          <div class="mini-product-img">
+          <a href="chitiet7.html" class="mini-product-img">
             <img src="img/Giay_pick4.jpg" alt="Giày Pickleball" />
-          </div>
+          </a>
           <div class="mini-product-info">
             <h3 class="mini-product-name">
               Giày Pickleball Nữ Jogarbola Vortex màu "Purple/White"...
@@ -382,6 +400,23 @@
             <div class="mini-price-box">
               <span class="mini-new-price">1.690.000đ</span>
               <span class="mini-old-price">1.990.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-15%</span>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <a href="chitiet31.html" class="mini-product-img">
+            <img src="img/Giay_amk1.jpg" alt="Giày Pickleball" />
+          </a>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Giày Pickleball Amakirk Aura 1...</h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">1.999.000đ</span>
+              <span class="mini-old-price">2.699.000đ</span>
             </div>
             <span class="sale-tag-discount">-15%</span>
           </div>
@@ -411,9 +446,9 @@
           <div class="card-badge-shop">
             <img src="img/logo1.jpg" alt="Shop logo" />
           </div>
-          <div class="mini-product-img">
+          <a href="chitiet7.html" class="mini-product-img">
             <img src="img/Giay_pick5.jpg" alt="Giày Pickleball" />
-          </div>
+          </a>
           <div class="mini-product-info">
             <h3 class="mini-product-name">
               Giày Pickleball Jogarbola Vortex màu "Blue/White"...
@@ -430,9 +465,9 @@
           <div class="card-badge-shop">
             <img src="img/logo1.jpg" alt="Shop logo" />
           </div>
-          <div class="mini-product-img">
+          <a href="chitiet10.html" class="mini-product-img">
             <img src="img/Giay_pick6.jpg" alt="Giày Pickleball" />
-          </div>
+          </a>
           <div class="mini-product-info">
             <h3 class="mini-product-name">
               Giày Pickleball Asics FF3 màu Hồng "Pink/White"...
@@ -449,13 +484,243 @@
           <div class="card-badge-shop">
             <img src="img/logo1.jpg" alt="Shop logo" />
           </div>
-          <div class="mini-product-img">
+          <a href="chitiet10.html" class="mini-product-img">
             <img src="img/Giay_pick7.jpg" alt="Giày Pickleball" />
-          </div>
+          </a>
           <div class="mini-product-info">
             <h3 class="mini-product-name">
-              Giày Pickleball Nữ Jogarbola Vortex màu "Purple/White"...
+              Giày Pickleball Asics FF3 màu Hồng "Purple/White"...
             </h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">3.690.000đ</span>
+              <span class="mini-old-price">4.990.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-15%</span>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <a href="chitiet5.html" class="mini-product-img">
+            <img src="img/Giay_pick3.jpg" alt="Giày Pickleball" />
+          </a>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Giày Pickleball Skechers</h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">3.650.000đ</span>
+              <span class="mini-old-price">4.850.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-15%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-controls">
+        <div class="nav-buttons">
+          <button class="btn-nav prev-btn">‹</button>
+          <button class="btn-nav next-btn active">›</button>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar-line"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-section-box">
+      <div class="section-header">
+        <div class="header-title-wrapper">
+          <img src="img/logo1.jpg" alt="Icon" class="header-icon" />
+          <div class="header-text">
+            <span class="sub-title">NEW ARRIVALS</span>
+            <h2 class="main-title">
+              Hàng mới về <span class="red-dash"></span>
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-product-grid">
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <a href="chitiet1.html" class="mini-product-img">
+            <img src="img/Vot_TOUR.jpg" alt="Vợt Amakirk VT Tour" />
+          </a>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Vợt Amakirk VT Tour</h3>
+            <div class="mini-price-box">
+              <div class="mini-price-box">
+                <span class="mini-new-price">3.650.000đ</span>
+                <span class="mini-old-price">4.850.000đ</span>
+              </div>
+              <span class="sale-tag-discount">-25%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <a href="chitiet8.html" class="mini-product-img">
+            <img src="img/amk_control6.jpg" alt="Vợt Amakirk Control 5.0" />
+          </a>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Vợt Amakirk Control 5.0</h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">2.950.000đ</span>
+              <span class="mini-old-price">3.990.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-23%</span>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <a href="chitiet22.html" class="mini-product-img">
+            <img src="img/vot_aspire5.jpg" alt="Vợt Zocker" />
+          </a>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">
+              Vợt Zocker Aspire Signature - Vợt Pickleball cao cấp cho người
+              chơi chuyên nghiệp
+            </h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">3.550.000đ</span>
+              <span class="mini-old-price">4.200.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-15%</span>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <div class="mini-product-img">
+            <img src="img/joola_2.jpg" alt="Vợt Joola" />
+          </div>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Vợt Joola Gen 5 Perseus Pro</h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">6.550.000đ</span>
+              <span class="mini-old-price">7.990.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-15%</span>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <a href="chitiet6.html" class="mini-product-img">
+            <img src="img/sypik_trion2.jpg" alt="Vợt Sypik Trion 5" />
+          </a>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Vợt Sypik Trion 5 Pro</h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">2.650.000đ</span>
+              <span class="mini-old-price">3.590.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-15%</span>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <a href="chitiet13.html" class="mini-product-img">
+            <img src="img/Leopard1.jpg" alt="Vợt Pickleball Leopard" />
+          </a>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">
+              Vợt Pickleball Leopard Ngũ Hành Power
+            </h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">2.650.000đ</span>
+              <span class="mini-old-price">3.850.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-15%</span>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <a href="chitiet14.html" class="mini-product-img">
+            <img src="img/boom1.jpg" alt="Giày Pickleball" />
+          </a>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Vợt Pickleball Selkirk Boomstick</h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">5.650.000đ</span>
+              <span class="mini-old-price">6.850.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-15%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-controls">
+        <div class="nav-buttons">
+          <button class="btn-nav prev-btn">‹</button>
+          <button class="btn-nav next-btn active">›</button>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar-line"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-section-box">
+      <div class="section-header">
+        <div class="header-title-wrapper">
+          <img src="img/logo1.jpg" alt="Icon" class="header-icon" />
+          <div class="header-text">
+            <span class="sub-title">NEW ARRIVALS</span>
+            <h2 class="main-title">
+              Hàng mới về <span class="red-dash"></span>
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-product-grid">
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <div class="mini-product-img">
+            <img src="img/balo_joola1.jpg" alt="Balo Joola" />
+          </div>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Balo Joola Tour Elite</h3>
+            <div class="mini-price-box">
+              <div class="mini-price-box">
+                <span class="mini-new-price">2.550.000đ</span>
+                <span class="mini-old-price">3.650.000đ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <a href="chitiet26.html" class="mini-product-img">
+            <img src="img/balo_facolos1.jpg" alt="Balo Facolos" />
+          </a>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Balo Facolos Pro Tour</h3>
             <div class="mini-price-box">
               <span class="mini-new-price">1.690.000đ</span>
               <span class="mini-old-price">1.990.000đ</span>
@@ -469,15 +734,64 @@
             <img src="img/logo1.jpg" alt="Shop logo" />
           </div>
           <div class="mini-product-img">
-            <img src="img/Giay_pick8.jpg" alt="Giày Pickleball" />
+            <img src="img/balo_sypik.jpg" alt="Balo Sypik" />
           </div>
           <div class="mini-product-info">
-            <h3 class="mini-product-name">
-              Giày Pickleball Nữ Jogarbola Vortex màu "Purple/White"...
-            </h3>
+            <h3 class="mini-product-name">Balo Sypik Pro</h3>
             <div class="mini-price-box">
-              <span class="mini-new-price">1.690.000đ</span>
-              <span class="mini-old-price">1.990.000đ</span>
+              <span class="mini-new-price">3.690.000đ</span>
+              <span class="mini-old-price">4.990.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-15%</span>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <div class="mini-product-img">
+            <img src="img/balo_amk.jpg" alt="Balo Amk" />
+          </div>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Balo Amk</h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">1.999.000đ</span>
+              <span class="mini-old-price">2.590.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-15%</span>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <div class="mini-product-img">
+            <img src="img/balo_proton.jpg" alt="Balo Proton" />
+          </div>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Balo Proton</h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">2.690.000đ</span>
+              <span class="mini-old-price">3.290.000đ</span>
+            </div>
+            <span class="sale-tag-discount">-15%</span>
+          </div>
+        </div>
+
+        <div class="mini-product-card">
+          <div class="card-badge-shop">
+            <img src="img/logo1.jpg" alt="Shop logo" />
+          </div>
+          <div class="mini-product-img">
+            <img src="img/balo_joola5.jpg" alt="Balo Joola" />
+          </div>
+          <div class="mini-product-info">
+            <h3 class="mini-product-name">Balo Joola Tour Elite</h3>
+            <div class="mini-price-box">
+              <span class="mini-new-price">3.390.000đ</span>
+              <span class="mini-old-price">3.990.000đ</span>
             </div>
             <span class="sale-tag-discount">-15%</span>
           </div>
@@ -496,77 +810,120 @@
     </div>
 
     <footer class="main-footer">
-      <div class="footer-container">
-        <div class="footer-top">
-          <div class="footer-col">
-            <h3>THÔNG TIN CHUNG</h3>
-            <p>Shop Web Thể Thao - Mua đồ chất, giá hời nhất</p>
-            <p>
-              <strong>Địa chỉ:</strong> 25T2 bán đảo Linh Đàm, Hoàng Liệt, Hoàng
-              Mai, Hà Nội
-            </p>
-            <p><strong>Điện thoại:</strong> 0999999999</p>
-            <p><strong>Email:</strong> shop.spsptt@gmail.com</p>
-          </div>
-
-          <div class="footer-col">
-            <h3>VỀ CHÚNG TÔI</h3>
-            <ul>
-              <li><a href="./index.html">Trang chủ</a></li>
-              <li><a href="./gioithieu.html">Giới thiệu</a></li>
-              <li><a href="./sanpham.html">Sản phẩm</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h3>CHÍNH SÁCH KHÁCH HÀNG</h3>
-            <ul>
-              <li><a href="./CSBM.html">Chính sách bảo mật</a></li>
-              <li><a href="./CSVC.html">Chính sách vận chuyển</a></li>
-              <li><a href="./CSDT.html">Chính sách đổi trả</a></li>
-              <li><a href="./QDSD.html">Quy định sử dụng</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h3>LIÊN KẾT XÃ HỘI</h3>
-            <h3 class="payment-title">PHƯƠNG THỨC THANH TOÁN</h3>
-          </div>
+      <div class="footer-top container">
+        <div class="footer-col">
+          <h3>VỀ CHÚNG TÔI</h3>
+          <ul>
+            <li><a href="./gioithieu.html">Giới thiệu về SPSP</a></li>
+            <li><a href="./tuyendung.html">Tuyển dụng</a></li>
+            <li><a href="./hethong-cuahang.html">Hệ thống cửa hàng</a></li>
+          </ul>
         </div>
+        <div class="footer-col">
+          <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+          <ul>
+            <li><a href="./Lienhe.html">Liên hệ góp ý</a></li>
+            <li>
+              <a href="./huongdan-muahang.html">Hướng dẫn mua hàng online</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>CHÍNH SÁCH</h3>
+          <ul>
+            <li><a href="./CSBM.html">Chính sách bảo mật</a></li>
+            <li><a href="./CSVC.html">Chính sách vận chuyển</a></li>
+            <li><a href="./CSDT.html">Chính sách đổi trả</a></li>
+            <li><a href="./QDSD.html">Quy định sử dụng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>LIÊN KẾT XÃ HỘI</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com/" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://youtube.com/" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://instagram.com/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
 
-        <hr class="footer-divider" />
+          <h3 class="payment-title">PHƯƠNG THỨC THANH TOÁN</h3>
+          <div class="payment-icons">
+            <img
+              src="img/visa.jpg"
+              alt="Visa"
+              class="payment-img"
+              title="Thanh toán Visa"
+            />
 
-        <div class="footer-middle">
-          <div class="company-info">
-            <div class="footer-logo">
-              <h2>Shop SPSP</h2>
-            </div>
-            <p>
-              <strong>CÔNG TY CỔ PHẦN THƯƠNG MẠI VÀ NỘI DUNG SPSP</strong>
-            </p>
-            <p>Mã số thuế: 0105841634</p>
-            <p>Người chịu trách nhiệm: Ông Lê Hồng Phong.</p>
-            <p>
-              Địa chỉ: Tầng 4, tòa nhà 180 Triệu Việt Vương, Bùi Thị Xuân, Hai
-              Bà Trưng, Hà Nội
-            </p>
-            <p>
-              Văn phòng giao dịch: Tầng 12A, Tòa nhà Vinaconex Diamond (TTTM Chợ
-              Mơ), 459C Bạch Mai, Hà Nội
-            </p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+              alt="Mastercard"
+              class="payment-img"
+              title="Thanh toán Mastercard"
+            />
+
+            <img
+              src="img/momo.jpg"
+              alt="Ví MoMo"
+              class="payment-img"
+              title="Ví MoMo"
+            />
+
+            <img
+              src="img/zalopay.jpg"
+              alt="ZaloPay"
+              class="payment-img"
+              title="Ví ZaloPay"
+            />
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
+              alt="Quét mã QR"
+              class="payment-img qr-icon"
+              title="Thanh toán quét mã QR"
+            />
           </div>
         </div>
       </div>
 
+      <hr class="footer-divider container" />
+
+      <div class="footer-middle container">
+        <div class="company-info">
+          <h2>Shop SPSP</h2>
+          <p><strong>CÔNG TY CỔ PHẦN THƯƠNG MẠI VÀ NỘI DUNG SPSP</strong></p>
+          <p><i class="fas fa-hashtag"></i> Mã số thuế: 0105841634</p>
+          <p>
+            <i class="fas fa-user-tie"></i> Người chịu trách nhiệm: Ông Lê Hồng
+            Phong.
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Địa chỉ: Tầng 4, tòa nhà 180
+            Triệu Việt Vương, Bùi Thị Xuân, Hai Bà Trưng, Hà Nội
+          </p>
+          <p>
+            <i class="fas fa-building"></i> Văn phòng giao dịch: Tầng 12A, Tòa
+            nhà Vinaconex Diamond (TTTM Chợ Mơ), 459C Bạch Mai, Hà Nội
+          </p>
+          <p>
+            <i class="fas fa-phone-alt"></i> Điện thoại: 024.36227912 - Fax:
+            024.36227913
+          </p>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <p>
-          © Bản quyền thuộc về <strong>shop.spsp.vn</strong> | Cung cấp bởi SPSP
-          - Shop Thể Thao
-        </p>
+        <p>&copy; 2026 Shop SPSP. Tất cả các quyền được bảo hộ.</p>
       </div>
     </footer>
 
     <script src="HTML.js"></script>
     <script src="cart.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

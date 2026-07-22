@@ -1,4 +1,3 @@
-/* Reset CSS cơ bản */
 * {
   margin: 0;
   padding: 0;
@@ -17,99 +16,148 @@ body {
   margin: 0 auto;
 }
 
-/* 1. Thiết kế Top Header */
 .top-header {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 15px 0;
   border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .header-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-/* Thanh tìm kiếm */
+.logo img {
+  display: block;
+  max-width: 130px;
+  height: auto;
+  object-fit: contain;
+}
+
+.lienhe p {
+  font-size: 1rem;
+  color: #333333;
+  margin: 0;
+  font-weight: 500;
+}
+
+.lienhe #hotline {
+  color: #e53935;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
 .search-box {
   display: flex;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  align-items: center;
+  border: 2px solid #e53935;
+  border-radius: 25px;
   overflow: hidden;
-}
-
-#hotline {
-  color: #d32f2f;
-  font-weight: bold;
-}
-
-.search-box select,
-.search-box input,
-.search-box button {
-  padding: 8px 20px;
-  border: none;
-  outline: none;
+  background-color: #ffffff;
+  flex: 1;
+  max-width: 500px;
 }
 
 .search-box select {
-  background-color: #f9f9f9;
-  border-right: 1px solid #ccc;
+  padding: 10px 15px;
+  border: none;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 0.9rem;
+  outline: none;
   cursor: pointer;
+  border-right: 1px solid #e0e0e0;
 }
 
 .search-box input {
-  width: 300px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.95rem;
 }
 
 .search-box button {
-  background-color: #000000;
-  color: #fff;
+  background-color: #e53935;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
 }
 
-/* Giỏ hàng */
+.search-box button:hover {
+  background-color: #d32f2f;
+}
+
 .cart {
-  border: 1px solid #ccc;
-  padding: 8px 15px;
-  background-color: #f9f9f9;
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14px;
+  background-color: #f9f9f9;
+  padding: 8px 15px;
+  border-radius: 25px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cart:hover {
+  background-color: #ffebeb;
+  border-color: #e53935;
+  transform: translateY(-2px);
+}
+
+#header-cart-info {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333333;
 }
 
 .cart-icon {
-  background-color: #000000;
-  color: white;
-  padding: 4px 6px;
-  border-radius: 2px;
+  font-size: 1.2rem;
 }
 
-/* 2. Thiết kế Thanh Điều Hướng (Nav Bar) */
 .nav-bar {
-  background-color: #1a1a1a;
+  background-color: #111111;
+  width: 100%;
 }
 
 .menu {
-  display: flex;
   list-style: none;
+  display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
 
+.menu li {
+  position: relative;
+}
+
 .menu li a {
   display: block;
-  padding: 15px 50px;
-  color: #bbb;
+  padding: 15px 25px;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 13px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
   transition: all 0.3s ease;
 }
+
 .menu li a:hover,
 .menu li.active a {
-  color: #343333;
-  background-color: #2a2a2a;
+  background-color: #e53935;
+  color: #ffffff;
 }
 
 .menu li.active a {
@@ -117,7 +165,6 @@ body {
   color: #111;
 }
 
-/* Khung chứa breadcrumb */
 .breadcrumb {
   padding: 15px 5%;
   font-size: 14px;
@@ -146,9 +193,6 @@ body {
   font-weight: 500;
 }
 
-/* ==========================================================================
-   BỔ SUNG CSS CHO NỘI DUNG TRANG TIN TỨC & FOOTER CHUẨN
-   ========================================================================== */
 :root {
   --navy-blue: #1565c0;
   --sport-red: #ff4757;
@@ -163,7 +207,6 @@ body {
   margin: 0 auto;
 }
 
-/* Thân bài viết */
 .news-container {
   padding: 40px 0 60px 0;
 }
@@ -186,7 +229,6 @@ body {
   font-size: 1.05rem;
 }
 
-/* Bộ lọc Buttons */
 .filter-wrapper {
   display: flex;
   justify-content: center;
@@ -214,7 +256,6 @@ body {
   box-shadow: 0 4px 12px rgba(21, 101, 192, 0.2);
 }
 
-/* Lưới hiển thị danh sách bài viết */
 .news-grid-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -235,7 +276,6 @@ body {
   box-shadow: var(--card-hover-shadow);
 }
 
-/* Hộp ảnh thu nhỏ và zoom ảnh */
 .thumbnail-box {
   position: relative;
   height: 220px;
@@ -253,7 +293,6 @@ body {
   transform: scale(1.06);
 }
 
-/* Nhãn danh mục đè lên ảnh */
 .badge {
   position: absolute;
   top: 15px;
@@ -276,7 +315,6 @@ body {
   background-color: #2ed573;
 }
 
-/* Nội dung bài viết */
 .card-body-content {
   padding: 22px;
 }
@@ -299,6 +337,7 @@ body {
   font-size: 0.95rem;
   margin-bottom: 18px;
   display: -webkit-box;
+  line-clamp: 2;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -327,14 +366,11 @@ body {
   transform: translateX(4px);
 }
 
-/* ==========================================================================
-   ĐỊNH DẠNG HỆ THỐNG FOOTER CHUẨN DOANH NGHIỆP
-   ========================================================================== */
 .main-footer {
-  background-color: #fff;
-  color: #444;
+  background-color: #111111;
+  color: #ffffff;
   padding-top: 50px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #333333;
   margin-top: 40px;
 }
 
@@ -348,7 +384,7 @@ body {
 .footer-col h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: #111;
+  color: #ffffff;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -362,7 +398,7 @@ body {
 }
 
 .footer-col ul li a {
-  color: #555;
+  color: #cccccc;
   text-decoration: none;
   font-size: 0.95rem;
   transition: var(--transition-smooth);
@@ -373,13 +409,12 @@ body {
   padding-left: 4px;
 }
 
-/* Mạng xã hội & Thanh toán */
 .social-icons a {
   display: inline-block;
   width: 36px;
   height: 36px;
-  background: #f1f2f6;
-  color: #333;
+  background: #222222;
+  color: #ffffff;
   text-align: center;
   line-height: 36px;
   border-radius: 50%;
@@ -398,40 +433,68 @@ body {
   margin-top: 15px;
 }
 
+.payment-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
 .payment-icons i {
   font-size: 2rem;
-  margin-right: 12px;
-  color: #666;
+  color: #cccccc;
+  display: flex;
+  align-items: center;
+}
+
+.payment-icons .payment-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+  background-color: #ffffff;
+  padding: 2px;
+}
+
+.payment-icons .payment-img:hover,
+.payment-icons i:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.payment-icons .payment-img.qr-icon {
+  height: 34px;
 }
 
 .footer-divider {
   border: 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #333333;
   margin: 20px auto;
 }
 
-/* Doanh nghiệp */
 .company-info h2 {
   font-size: 1.5rem;
-  color: var(--navy-blue);
+  color: #64b5f6;
   margin-bottom: 15px;
   text-transform: uppercase;
 }
 
 .company-info p {
   font-size: 0.9rem;
-  color: #555;
+  color: #cccccc;
   margin-bottom: 8px;
 }
 
 .company-info p i {
   width: 20px;
-  color: var(--navy-blue);
+  color: #64b5f6;
 }
 
 .footer-bottom {
-  background-color: #222;
-  color: #bbb;
+  background-color: #000000;
+  color: #888888;
   text-align: center;
   padding: 15px 0;
   font-size: 0.85rem;
