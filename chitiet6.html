@@ -97,8 +97,12 @@
           <input type="text" placeholder="Tìm kiếm..." />
           <button type="button">🔍</button>
         </div>
-        <div class="cart">
-          <span>0 Sản phẩm: 0 đ</span>
+        <div
+          class="cart"
+          onclick="location.href = './checkout.html'"
+          style="cursor: pointer"
+        >
+          <span id="header-cart-info">0 Sản phẩm: 0 đ</span>
           <span class="cart-icon">🛒</span>
         </div>
       </div>
@@ -181,6 +185,29 @@
             lực <br />🎯 Kiểm soát chính xác <br />💪 Cảm giác đầm tay
           </div>
 
+          <div class="color-selector">
+            <p class="selector-title">
+              Màu sắc: <span id="selected-color-name">Chưa chọn</span>
+            </p>
+            <div class="color-options">
+              <button type="button" class="color-btn" data-color="Xám">
+                Xám
+              </button>
+              <button type="button" class="color-btn" data-color="Xanh Lục">
+                Xanh Lục
+              </button>
+              <button type="button" class="color-btn" data-color="Xanh Lá">
+                Xanh Lá
+              </button>
+              <button type="button" class="color-btn" data-color="Vàng">
+                Vàng
+              </button>
+              <button type="button" class="color-btn" data-color="Cam">
+                Cam
+              </button>
+            </div>
+          </div>
+
           <div class="purchase-actions">
             <div class="quantity-selector">
               <button type="button" onclick="decreaseQty()">-</button>
@@ -233,6 +260,7 @@
       </div>
     </main>
 
-    <script src="chitiet1.js"></script>
+    <script src="chitiet6.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>

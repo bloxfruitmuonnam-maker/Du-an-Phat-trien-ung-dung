@@ -52,21 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  let selectedColor = "";
-  const colorButtons = document.querySelectorAll(".color-btn");
-  const colorNameDisplay = document.getElementById("selected-color-name");
-
-  colorButtons.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      colorButtons.forEach((b) => b.classList.remove("selected"));
-      this.classList.add("selected");
-
-      selectedColor = this.getAttribute("data-color");
-      colorNameDisplay.textContent = selectedColor;
-      colorNameDisplay.style.color = "#333";
-    });
-  });
-
   const btnMinus = document.querySelector(".btn-minus");
   const btnPlus = document.querySelector(".btn-plus");
   if (btnMinus) btnMinus.addEventListener("click", decreaseQty);
@@ -90,36 +75,32 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("qty") ||
       document.querySelector(".quantity-input");
     const quantity = qtyInput ? parseInt(qtyInput.value) : 1;
+
     const size = selectedSizeInput ? selectedSizeInput.value : "";
 
-    return { baseName, price, quantity, size, color: selectedColor };
+    return { baseName, price, quantity, size };
   }
 
   function handleAddToCart(isBuyNow = false) {
     const product = getShoeDetails();
-
-    if (!product.color) {
-      alert("Vui lòng chọn màu sắc trước khi tiến hành!");
-      return;
-    }
 
     if (!product.size) {
       alert("Vui lòng chọn size giày trước khi tiến hành!");
       return;
     }
 
-    const finalProductName = `${product.baseName} - Màu ${product.color} - Size ${product.size}`;
+    const finalProductName = `${product.baseName} - Size ${product.size}`;
 
     if (typeof addToCart === "function") {
       addToCart(finalProductName, product.price, product.quantity);
 
       if (isBuyNow) {
         window.location.href = "./checkout.html";
-      } else {
-        alert(`Đã thêm ${finalProductName} vào giỏ hàng!`);
       }
     } else {
-      console.error("Lỗi: Chưa tìm thấy hàm addToCart.");
+      console.error(
+        "Lỗi: Chưa tìm thấy hàm addToCart. Hãy đảm bảo bạn đã nhúng cart.js trước chitiet5.js trong file HTML.",
+      );
     }
   }
 

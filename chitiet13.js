@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function getProductDetails() {
     const qtyInput = document.getElementById("qty");
     return {
-      name: "Vợt Amakirk VT Tour Promax",
-      price: 3850000,
+      name: "Vợt Leopard Ngũ Hành Power",
+      price: 2650000,
       quantity: parseInt(qtyInput.value) || 1,
       color: selectedColor,
     };

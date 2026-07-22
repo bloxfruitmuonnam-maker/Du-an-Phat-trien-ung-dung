@@ -97,8 +97,12 @@
           <input type="text" placeholder="Tìm kiếm..." />
           <button type="button">🔍</button>
         </div>
-        <div class="cart">
-          <span>0 Sản phẩm: 0 đ</span>
+        <div
+          class="cart"
+          onclick="location.href = './checkout.html'"
+          style="cursor: pointer"
+        >
+          <span id="header-cart-info">0 Sản phẩm: 0 đ</span>
           <span class="cart-icon">🛒</span>
         </div>
       </div>
@@ -121,7 +125,7 @@
       <a href="./sanpham.html" class="breadcrumb-item home">Sản phẩm</a>
       <span class="breadcrumb-separator">/</span>
       <span class="breadcrumb-item active"
-        >CHI TIẾT SẢN PHẨM GIÀY JOGABOLA VORTEX</span
+        >CHI TIẾT SẢN PHẨM GIÀY KAIWIN DIAMOND</span
       >
     </div>
 
@@ -231,6 +235,7 @@
       </div>
     </main>
 
-    <script src="chitiet5.js"></script>
+    <script src="chitiet12.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>

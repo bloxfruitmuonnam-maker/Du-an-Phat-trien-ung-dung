@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="chitiet1.css" />
-
+    <link rel="stylesheet" href="chitiet5.css" />
     <link
       rel="apple-touch-icon"
       sizes="57x57"
@@ -97,8 +96,12 @@
           <input type="text" placeholder="Tìm kiếm..." />
           <button type="button">🔍</button>
         </div>
-        <div class="cart">
-          <span>0 Sản phẩm: 0 đ</span>
+        <div
+          class="cart"
+          onclick="location.href = './checkout.html'"
+          style="cursor: pointer"
+        >
+          <span id="header-cart-info">0 Sản phẩm: 0 đ</span>
           <span class="cart-icon">🛒</span>
         </div>
       </div>
@@ -164,14 +167,29 @@
         </div>
 
         <div class="product-info">
-          <div class="event-badge">Pickleball Challenge 2026</div>
+          <div class="event-badge">Pickleball Challenge Mỹ Đình 2026</div>
           <h1 class="product-title">Skechers Viper Court Pro 2.0</h1>
           <p class="product-price">3.450.000 đ</p>
 
           <div class="product-short-desc">
-            <p>🔥 Giày Skechers Viper Court Pro 2.0 🔥</p>
-            <br />Skechers Viper Court Pro 2.0 – lựa chọn dành cho những người
-            chơi muốn tạo dấu ấn và khác biệt trong từng pha bóng.
+            <p>Pickleball Challenge Mỹ Đình 2026</p>
+          </div>
+
+          <div class="color-selector">
+            <p class="selector-title">
+              Màu sắc: <span id="selected-color-name">Chưa chọn</span>
+            </p>
+            <div class="color-options">
+              <button type="button" class="color-btn" data-color="Hồng">
+                Hồng
+              </button>
+              <button type="button" class="color-btn" data-color="Trắng">
+                Trắng
+              </button>
+              <button type="button" class="color-btn" data-color="Đen">
+                Đen
+              </button>
+            </div>
           </div>
 
           <div class="size-selection">
@@ -179,11 +197,11 @@
             <div class="size-options">
               <button type="button" class="size-btn">39</button>
               <button type="button" class="size-btn">40</button>
-              <button type="button" class="size-btn active">41</button>
+              <button type="button" class="size-btn">41</button>
               <button type="button" class="size-btn">42</button>
               <button type="button" class="size-btn">43</button>
             </div>
-            <input type="hidden" id="selected-size" value="41" />
+            <input type="hidden" id="selected-size" value="" />
           </div>
 
           <div class="purchase-actions">
@@ -212,13 +230,7 @@
         </div>
 
         <div id="description" class="tab-content active">
-          <p>
-            🔥 Giày Skechers Viper Court Pro 2.0 ‘Pink’ 172109-HPK là sự lựa
-            chọn hàng đầu cho phái nữ yêu thích Pickleball với sắc hồng nổi bật
-            và công nghệ hiệu suất cao. Sản phẩm trang bị đế cao su Goodyear®
-            siêu bền, mang lại độ bám vững chắc và khả năng xoay trở linh hoạt
-            trong các pha bóng tốc độ cao. 🔥
-          </p>
+          <p>Pickleball Challenge Mỹ Đình 2026</p>
         </div>
 
         <div id="reviews" class="tab-content">
@@ -228,5 +240,6 @@
     </main>
 
     <script src="chitiet5.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>

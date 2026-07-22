@@ -1,5 +1,6 @@
 function changeImage(element) {
   const newSrc = element.src;
+
   document.getElementById("current-image").src = newSrc;
 
   const thumbs = document.querySelectorAll(".thumb");
@@ -36,48 +37,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnAddCart = document.querySelector(".btn-add-cart");
   const btnBuyNow = document.querySelector(".btn-buy-now");
 
-  let selectedColor = "";
-
-  const colorButtons = document.querySelectorAll(".color-btn");
-  const colorNameDisplay = document.getElementById("selected-color-name");
-
-  colorButtons.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      colorButtons.forEach((b) => b.classList.remove("selected"));
-
-      this.classList.add("selected");
-
-      selectedColor = this.getAttribute("data-color");
-      colorNameDisplay.textContent = selectedColor;
-      colorNameDisplay.style.color = "#333";
-    });
-  });
-
   function getProductDetails() {
     const qtyInput = document.getElementById("qty");
     return {
-      name: "Vợt Amakirk VT Tour Promax",
-      price: 3850000,
+      name: "Bóng AMK",
+      price: 55000,
       quantity: parseInt(qtyInput.value) || 1,
-      color: selectedColor,
     };
   }
 
   if (btnAddCart) {
     btnAddCart.addEventListener("click", function () {
       const product = getProductDetails();
-
-      if (!product.color) {
-        alert("Vui lòng chọn màu sắc trước khi thêm vào giỏ hàng!");
-        return;
-      }
-
       if (typeof addToCart === "function") {
-        const finalProductName = `${product.name} - Màu ${product.color}`;
-        addToCart(finalProductName, product.price, product.quantity);
-        alert(`Đã thêm ${finalProductName} vào giỏ hàng!`);
+        addToCart(product.name, product.price, product.quantity);
       } else {
-        console.error("Lỗi: Chưa nhúng file cart.js trước file chitiet1.js!");
+        console.error("Lỗi: Chưa nhúng file cart.js trước file chitiet2.js!");
       }
     });
   }
@@ -85,15 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (btnBuyNow) {
     btnBuyNow.addEventListener("click", function () {
       const product = getProductDetails();
-
-      if (!product.color) {
-        alert("Vui lòng chọn màu sắc trước khi mua hàng!");
-        return;
-      }
-
       if (typeof addToCart === "function") {
-        const finalProductName = `${product.name} - Màu ${product.color}`;
-        addToCart(finalProductName, product.price, product.quantity);
+        addToCart(product.name, product.price, product.quantity);
+
         window.location.href = "./checkout.html";
       }
     });

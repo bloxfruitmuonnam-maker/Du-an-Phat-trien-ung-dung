@@ -124,7 +124,9 @@
     <div class="breadcrumb">
       <a href="./sanpham.html" class="breadcrumb-item home">Sản phẩm</a>
       <span class="breadcrumb-separator">/</span>
-      <span class="breadcrumb-item active">CHI TIẾT SẢN PHẨM BÓNG AMAKIRK</span>
+      <span class="breadcrumb-item active"
+        >CHI TIẾT SẢN PHẨM SELKIRK BOOMSTIK</span
+      >
     </div>
 
     <main class="product-detail-container container">
@@ -133,33 +135,56 @@
           <div class="main-image">
             <img
               id="current-image"
-              src="img/Bong_amk1.jpg"
+              src="img/boom2.jpg"
               alt="Ảnh sản phẩm chính"
             />
           </div>
           <div class="thumbnail-gallery">
             <img
               class="thumb active"
-              src="img/Bong_amk1.jpg"
+              src="img/boom3.jpg"
               alt="Thumb 1"
               onclick="changeImage(this)"
             />
             <img
               class="thumb"
-              src="img/bong_amk.jpg"
+              src="img/boom4.jpg"
               alt="Thumb 2"
+              onclick="changeImage(this)"
+            />
+            <img
+              class="thumb"
+              src="img/boom5.jpg"
+              alt="Thumb 3"
               onclick="changeImage(this)"
             />
           </div>
         </div>
 
         <div class="product-info">
-          <div class="event-badge">Pickleball Challenge Amakirk 2026</div>
-          <h1 class="product-title">Bóng Amakirk 48</h1>
-          <p class="product-price">55.000 đ</p>
+          <div class="event-badge">Pickleball Challenge 2026</div>
+          <h1 class="product-title">Vợt Selkirk BoomStik</h1>
+          <p class="product-price">5.650.000 đ</p>
 
           <div class="product-short-desc">
-            <p>🔥 AMAKIRK VT TOUR PRO MAX & BÓNG 48 PRO TOUR 🔥</p>
+            <p>🔥 SELKIRK BOOMSTIK 🔥</p>
+          </div>
+
+          <div class="color-selector">
+            <p class="selector-title">
+              Màu sắc: <span id="selected-color-name">Chưa chọn</span>
+            </p>
+            <div class="color-options">
+              <button type="button" class="color-btn" data-color="Bản Quốc Tế">
+                Bản Quốc Tế
+              </button>
+              <button type="button" class="color-btn" data-color="Bản Châu Á">
+                Bản Châu Á
+              </button>
+              <button type="button" class="color-btn" data-color="Bản Châu Âu">
+                Bản Châu Âu
+              </button>
+            </div>
           </div>
 
           <div class="purchase-actions">
@@ -188,32 +213,25 @@
         </div>
 
         <div id="description" class="tab-content active">
-          <p>
-            🔥 CỰC HOT – 𝐀𝐌𝐀𝐊𝐈𝐑𝐊 CHÍNH THỨC RA MẮT BÓNG PICKLEBALL 48 LỖ 𝐀𝐌𝐊𝟒𝟖
-            🔥
-          </p>
-          <br />
-          💥 𝐀𝐌𝐊𝟒𝟖 – Dòng bóng dành cho những trận đấu tốc độ, mang đến cảm giác
-          ổn định và tự tin trong từng pha bóng.
-          <br />
-          💥 Thiết kế 48 lỗ tối ưu:
-          <br />
-          ✅ Đường bay ổn định
-          <br />
-          ✅ Độ nảy đều và thật tay
-          <br />
-          ✅ Hạn chế rung lắc khi chơi ngoài trời
-          <br />
-          ✅ Phù hợp cho luyện tập, thi đấu phong trào và chuyên nghiệp
-          <br />
-          ✅ Giúp người chơi dễ cảm nhận bóng và cải thiện trình độ qua từng
-          buổi tập
-          <br />
-          ⚡ Từ những cú drive uy lực, volley phản xạ nhanh đến các pha dink
-          kiểm soát, 𝐀𝐌𝐊𝟒𝟖 luôn giữ cảm giác bóng ổn định để bạn tự tin triển
-          khai chiến thuật trên sân.
-          <br />
-          🔥 BỀN BỈ – ỔN ĐỊNH – CHƠI LÀ “CUỐN” 🔥
+          <div class="desc-info-img">
+            <img src="img/ts_boom.jpg" alt="Thông số chi tiết Kamito Dominus" />
+          </div>
+
+          <h2 class="athlete-title">Vận Động Viên Đại Diện</h2>
+
+          <div class="athlete-gallery">
+            <div class="athlete-card">
+              <img src="img/daidien_boom.jpg" alt="Tên Vận Động Viên A" />
+              <div class="athlete-name">Jack Sock</div>
+              <div class="athlete-role">Tay vợt tennis chuyên nghiệp</div>
+            </div>
+
+            <div class="athlete-card">
+              <img src="img/daidien_boom1.jpg" alt="Tên Vận Động Viên B" />
+              <div class="athlete-name">Tama Shimabukuro</div>
+              <div class="athlete-role">Thần Đồng Trẻ Của Pickleball</div>
+            </div>
+          </div>
         </div>
 
         <div id="reviews" class="tab-content">
@@ -222,7 +240,7 @@
       </div>
     </main>
 
-    <script src="chitiet2.js"></script>
+    <script src="chitiet14.js"></script>
     <script src="cart.js"></script>
   </body>
 </html>
