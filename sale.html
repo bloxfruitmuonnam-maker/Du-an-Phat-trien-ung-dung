@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="CSS_sale.css" />
+    <!-- Đã lược bỏ bớt thẻ link icon trong văn bản hiển thị để gọn gàng, bạn giữ nguyên head hiện tại của bạn nhé -->
+    <title>Cửa Hàng Pickleball Cao Cấp - Amakirk (Khuyến Mãi Lớn)</title>
+  </head>
+  <body>
+    <!-- GIỮ NGUYÊN HEADER -->
+    <header class="top-header">
+      <div class="container header-flex">
+        <div class="logo">
+          <img
+            src="https://res.cloudinary.com/qpsq7rri/image/upload/v1785045356/logo1_w4lmqp.jpg"
+            alt="SPSP Logo"
+            height="70"
+          />
+        </div>
+        <div class="search-box">
+          <select name="category">
+            <option>Chuyên mục</option>
+            <option value="vot">Vợt Pickleball</option>
+            <option value="giay">Giày Thể Thao</option>
+            <option value="phu-kien">Phụ kiện</option>
+            <option value="quan-ao">Quần Áo Thể Thao</option>
+          </select>
+          <input type="text" placeholder="Tìm kiếm..." />
+          <button type="button">🔍</button>
+        </div>
+        <div
+          class="cart"
+          onclick="location.href = './checkout.html'"
+          style="cursor: pointer"
+        >
+          <span id="header-cart-info">0 Sản phẩm: 0 đ</span>
+          <span class="cart-icon">🛒</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- GIỮ NGUYÊN NAV -->
+    <nav class="nav-bar">
+      <div class="container">
+        <ul class="menu">
+          <li><a href="./index.html">TRANG CHỦ</a></li>
+          <li><a href="./Gioithieu.html">GIỚI THIỆU</a></li>
+          <li><a href="./sanpham.html">SẢN PHẨM</a></li>
+          <li class="active"><a href="./sale.html">SALE OFF</a></li>
+          <li><a href="./tintuc.html">TIN TỨC</a></li>
+          <li><a href="./lienhe.html">LIÊN HỆ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- GIỮ NGUYÊN BREADCRUMB -->
+    <div class="breadcrumb">
+      <a href="./index.html" class="breadcrumb-item home">Trang chủ</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-item active">SĂN SALE CỰC CHẤT</span>
+    </div>
+
+    <!-- PHẦN THÂN TRANG (BODY) ĐÃ ĐƯỢC LÀM MỚI -->
+    <div class="container mt-30">
+      <div class="sale-banner">
+        <div class="sale-banner-content">
+          <div
+            class="badge-event"
+            style="box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)"
+          >
+            🔥 SIÊU SỰ KIỆN ĐẶC BIỆT 🔥
+          </div>
+          <h1 class="flash-sale-title">PICKLEBALL CHALLENGE MỸ ĐÌNH 2026</h1>
+          <p style="font-size: 1.2rem; margin-bottom: 20px; font-weight: 500">
+            Săn sale hàng hiệu - Mức giá hủy diệt chỉ có trong tuần này!
+          </p>
+          <div class="countdown">
+            <div class="time-box"><span id="days">05</span>Ngày</div>
+            <div class="time-box"><span id="hours">12</span>Giờ</div>
+            <div class="time-box"><span id="minutes">45</span>Phút</div>
+            <div class="time-box"><span id="seconds">30</span>Giây</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="product-grid">
+        <!-- Các sản phẩm cũ trong trang Sale -->
+        <div class="product-item">
+          <span class="discount-badge hot-badge">-14%</span>
+          <a href="chitiet1.html" class="product-img">
+            <img
+              src="https://res.cloudinary.com/qpsq7rri/image/upload/v1784813693/amakirk_axz0ax.jpg"
+              alt="Vợt Amakirk Power"
+            />
+          </a>
+          <div class="product-info">
+            <h3 class="product-name">Vợt Amakirk VT Tour Promax (3 Màu)</h3>
+            <div class="price-box">
+              <span class="old-price">4.500.000 đ</span>
+              <span class="product-price">3.850.000 đ</span>
+            </div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Vợt Amakirk VT Tour Promax (3 Màu)', 3650000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <span class="discount-badge">-39%</span>
+          <a href="chitiet2.html" class="product-img">
+            <img
+              src="https://res.cloudinary.com/qpsq7rri/image/upload/v1784682938/bong_amk_oytfkh.jpg"
+              alt="Bóng Amakirk"
+            />
+          </a>
+          <div class="product-info">
+            <h3 class="product-name">Quả Bóng Pickleball Amakirk 48 Lỗ</h3>
+            <div class="price-box">
+              <span class="old-price">90.000 đ</span>
+              <span class="product-price">55.000 đ</span>
+            </div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Quả Bóng Pickleball Amakirk 48 Lỗ', 55000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <span class="discount-badge hot-badge">-42%</span>
+          <a href="chitiet7.html" class="product-img">
+            <img
+              src="https://res.cloudinary.com/qpsq7rri/image/upload/v1784682943/giay_jogabola5_l0eusl.jpg"
+              alt="Giày Pickleball "
+            />
+          </a>
+          <div class="product-info">
+            <h3 class="product-name">Giày Pickleball Jogabola Votex</h3>
+            <div class="price-box">
+              <span class="old-price">3.000.000 đ</span>
+              <span class="product-price">1.750.000 đ</span>
+            </div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Giày Pickleball Jogabola Votex', 1750000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <!-- BỔ SUNG CÁC SẢN PHẨM TỪ TRANG SANPHAM.HTML VÀO ĐÂY ĐỂ LÀM DÀY TRANG SALE -->
+        <div class="product-item">
+          <span class="discount-badge hot-badge">-22%</span>
+          <a href="chitiet19.html" class="product-img">
+            <img
+              src="https://res.cloudinary.com/qpsq7rri/image/upload/v1784682942/franklin1_eukhvk.jpg"
+              alt="Vợt Franklin C45"
+            />
+          </a>
+          <div class="product-info">
+            <h3 class="product-name">Vợt Franklin C45 (Hàng Nhập)</h3>
+            <div class="price-box">
+              <span class="old-price">5.850.000 đ</span>
+              <span class="product-price">4.550.000 đ</span>
+            </div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Franklin C45', 4550000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <span class="discount-badge">-19%</span>
+          <a href="chitiet29.html" class="product-img">
+            <img
+              src="https://res.cloudinary.com/qpsq7rri/image/upload/v1784683019/proton_flamingo_pp5xni.jpg"
+              alt="Vợt Proton Flamingo"
+            />
+          </a>
+          <div class="product-info">
+            <h3 class="product-name">Vợt Proton Flamingo</h3>
+            <div class="price-box">
+              <span class="old-price">6.850.000 đ</span>
+              <span class="product-price">5.550.000 đ</span>
+            </div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Vợt Proton Flamingo', 5550000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <span class="discount-badge">-28%</span>
+          <a href="chitiet15.html" class="product-img">
+            <img
+              src="https://res.cloudinary.com/qpsq7rri/image/upload/v1784682928/alphax1_uldahh.jpg"
+              alt="Vợt Kamito Alpha 2"
+            />
+          </a>
+          <div class="product-info">
+            <h3 class="product-name">Vợt Kamito Alpha 2</h3>
+            <div class="price-box">
+              <span class="old-price">3.850.000 đ</span>
+              <span class="product-price">2.750.000 đ</span>
+            </div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Vợt Kamito Alpha 2', 2750000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <span class="discount-badge">-25%</span>
+          <a href="chitiet28.html" class="product-img">
+            <img
+              src="https://res.cloudinary.com/qpsq7rri/image/upload/v1784682936/balo_proton_bxnt5e.jpg"
+              alt="Balo Proton"
+            />
+          </a>
+          <div class="product-info">
+            <h3 class="product-name">Balo Proton Chuyên Nghiệp</h3>
+            <div class="price-box">
+              <span class="old-price">3.950.000 đ</span>
+              <span class="product-price">2.950.000 đ</span>
+            </div>
+            <button class="btn-buy" onclick="addToCart('Balo Proton', 2950000)">
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <span class="discount-badge">-18%</span>
+          <div class="product-img">
+            <img
+              src="https://res.cloudinary.com/qpsq7rri/image/upload/v1784682946/Giay_pick6_m1rybf.jpg"
+              alt="Giày Pickleball Asics"
+            />
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Giày Pickleball Asics FF3 - Bản 1</h3>
+            <div class="price-box">
+              <span class="old-price">4.550.000 đ</span>
+              <span class="product-price">3.750.000 đ</span>
+            </div>
+            <button
+              class="btn-buy"
+              onclick="addToCart('Giày Pickleball Asics FF3 - Bản 1', 3750000)"
+            >
+              Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GIỮ NGUYÊN FOOTER BỔ SUNG -->
+    <footer class="main-footer">
+      <div class="footer-top container">
+        <div class="footer-col">
+          <h3>VỀ CHÚNG TÔI</h3>
+          <ul>
+            <li><a href="./gioithieu.html">Giới thiệu về SPSP</a></li>
+            <li><a href="./tuyendung.html">Tuyển dụng</a></li>
+            <li><a href="./hethong-cuahang.html">Hệ thống cửa hàng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+          <ul>
+            <li><a href="./Lienhe.html">Liên hệ góp ý</a></li>
+            <li>
+              <a href="./huongdan-muahang.html">Hướng dẫn mua hàng online</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>CHÍNH SÁCH</h3>
+          <ul>
+            <li><a href="./CSBM.html">Chính sách bảo mật</a></li>
+            <li><a href="./CSVC.html">Chính sách vận chuyển</a></li>
+            <li><a href="./CSDT.html">Chính sách đổi trả</a></li>
+            <li><a href="./QDSD.html">Quy định sử dụng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>LIÊN KẾT XÃ HỘI</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com/" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://youtube.com/" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://instagram.com/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+
+          <h3 class="payment-title">PHƯƠNG THỨC THANH TOÁN</h3>
+          <div class="payment-icons">
+            <img
+              src="img/visa.jpg"
+              alt="Visa"
+              class="payment-img"
+              title="Thanh toán Visa"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+              alt="Mastercard"
+              class="payment-img"
+              title="Thanh toán Mastercard"
+            />
+            <img
+              src="img/momo.jpg"
+              alt="Ví MoMo"
+              class="payment-img"
+              title="Ví MoMo"
+            />
+            <img
+              src="img/zalopay.jpg"
+              alt="ZaloPay"
+              class="payment-img"
+              title="Ví ZaloPay"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
+              alt="Quét mã QR"
+              class="payment-img qr-icon"
+              title="Thanh toán quét mã QR"
+            />
+          </div>
+        </div>
+      </div>
+
+      <hr class="footer-divider container" />
+
+      <div class="footer-middle container">
+        <div class="company-info">
+          <h2>Shop SPSP</h2>
+          <p><strong>CÔNG TY CỔ PHẦN THƯƠNG MẠI VÀ NỘI DUNG SPSP</strong></p>
+          <p><i class="fas fa-hashtag"></i> Mã số thuế: 0105841634</p>
+          <p>
+            <i class="fas fa-user-tie"></i> Người chịu trách nhiệm: Ông Lê Hồng
+            Phong.
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Địa chỉ: Tầng 4, tòa nhà 180
+            Triệu Việt Vương, Bùi Thị Xuân, Hai Bà Trưng, Hà Nội
+          </p>
+          <p>
+            <i class="fas fa-building"></i> Văn phòng giao dịch: Tầng 12A, Tòa
+            nhà Vinaconex Diamond (TTTM Chợ Mơ), 459C Bạch Mai, Hà Nội
+          </p>
+          <p>
+            <i class="fas fa-phone-alt"></i> Điện thoại: 024.36227912 - Fax:
+            024.36227913
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Shop SPSP. Tất cả các quyền được bảo hộ.</p>
+      </div>
+    </footer>
+
+    <script src="sale.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>
