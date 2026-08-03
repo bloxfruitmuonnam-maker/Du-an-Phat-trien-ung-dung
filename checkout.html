@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="CSS_sale.css" />
+    <link rel="stylesheet" href="checkout.css" />
+    <title>Thanh Toán Đơn Hàng - Amakirk</title>
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="container header-flex">
+        <div class="logo">
+          <img src="img/logo1.jpg" alt="SPSP Logo" height="70" />
+        </div>
+        <div
+          class="cart"
+          onclick="location.href = './checkout.html'"
+          style="cursor: pointer"
+        >
+          <span id="header-cart-info">0 Sản phẩm: 0 đ</span>
+          <span class="cart-icon">🛒</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-bar">
+      <div class="container">
+        <ul class="menu">
+          <li><a href="./index.html">TRANG CHỦ</a></li>
+          <li><a href="./Gioithieu.html">GIỚI THIỆU</a></li>
+          <li><a href="./sanpham.html">SẢN PHẨM</a></li>
+          <li><a href="./sale.html">SALE OFF</a></li>
+          <li><a href="./tintuc.html">TIN TỨC</a></li>
+          <li><a href="./lienhe.html">LIÊN HỆ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="./index.html" class="breadcrumb-item home">Trang chủ</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="./sale.html" class="breadcrumb-item">Sale Off</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-item active">Thanh toán</span>
+    </div>
+
+    <div class="container mt-30">
+      <div class="checkout-section" id="checkout-area">
+        <div class="checkout-grid">
+          <div class="cart-summary">
+            <h3>🛒 Đơn Hàng Của Bạn</h3>
+            <div id="cart-content"></div>
+            <div class="total-price" id="cart-total">Tổng cộng: 0 đ</div>
+            <button class="btn-back" id="btn-continue-shopping">
+              ← Tiếp tục mua sắm
+            </button>
+          </div>
+
+          <div class="order-form">
+            <h3>📝 Thông Tin Đặt Hàng</h3>
+            <form action="#" method="POST" id="purchase-form">
+              <input
+                type="hidden"
+                name="Chi_Tiet_Don_Hang"
+                id="form-cart-details"
+              />
+              <input type="hidden" name="Tong_Tien" id="form-cart-total" />
+
+              <div class="form-group">
+                <label for="name">Họ và Tên *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="Ho_Ten"
+                  placeholder="Ví dụ: Nguyễn Văn A"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Số Điện Thoại *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="So_Dien_Thoai"
+                  placeholder="Ví dụ: 0912345678"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="address">Địa Chỉ Nhận Hàng *</label>
+                <textarea
+                  id="address"
+                  name="Dia_Chi"
+                  rows="3"
+                  placeholder="Số nhà, tên đường..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="note">Ghi Chú Thêm (Nếu có)</label>
+                <input
+                  type="text"
+                  id="note"
+                  name="Ghi_Chu"
+                  placeholder="Chọn size giày, màu sắc vợt..."
+                />
+              </div>
+
+              <button type="submit" class="btn-submit">
+                XÁC NHẬN ĐẶT HÀNG GIAO TẬN NƠI
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER BỔ SUNG -->
+    <footer class="main-footer">
+      <div class="footer-top container">
+        <div class="footer-col">
+          <h3>VỀ CHÚNG TÔI</h3>
+          <ul>
+            <li><a href="./gioithieu.html">Giới thiệu về SPSP</a></li>
+            <li><a href="./tuyendung.html">Tuyển dụng</a></li>
+            <li><a href="./hethong-cuahang.html">Hệ thống cửa hàng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+          <ul>
+            <li><a href="./Lienhe.html">Liên hệ góp ý</a></li>
+            <li>
+              <a href="./huongdan-muahang.html">Hướng dẫn mua hàng online</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>CHÍNH SÁCH</h3>
+          <ul>
+            <li><a href="./CSBM.html">Chính sách bảo mật</a></li>
+            <li><a href="./CSVC.html">Chính sách vận chuyển</a></li>
+            <li><a href="./CSDT.html">Chính sách đổi trả</a></li>
+            <li><a href="./QDSD.html">Quy định sử dụng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>LIÊN KẾT XÃ HỘI</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com/" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://youtube.com/" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://instagram.com/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+
+          <h3 class="payment-title">PHƯƠNG THỨC THANH TOÁN</h3>
+          <div class="payment-icons">
+            <img
+              src="img/visa.jpg"
+              alt="Visa"
+              class="payment-img"
+              title="Thanh toán Visa"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+              alt="Mastercard"
+              class="payment-img"
+              title="Thanh toán Mastercard"
+            />
+            <img
+              src="img/momo.jpg"
+              alt="Ví MoMo"
+              class="payment-img"
+              title="Ví MoMo"
+            />
+            <img
+              src="img/zalopay.jpg"
+              alt="ZaloPay"
+              class="payment-img"
+              title="Ví ZaloPay"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
+              alt="Quét mã QR"
+              class="payment-img qr-icon"
+              title="Thanh toán quét mã QR"
+            />
+          </div>
+        </div>
+      </div>
+
+      <hr class="footer-divider container" />
+
+      <div class="footer-middle container">
+        <div class="company-info">
+          <h2>Shop SPSP</h2>
+          <p><strong>CÔNG TY CỔ PHẦN THƯƠNG MẠI VÀ NỘI DUNG SPSP</strong></p>
+          <p><i class="fas fa-hashtag"></i> Mã số thuế: 0105841634</p>
+          <p>
+            <i class="fas fa-user-tie"></i> Người chịu trách nhiệm: Ông Lê Hồng
+            Phong.
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Địa chỉ: Tầng 4, tòa nhà 180
+            Triệu Việt Vương, Bùi Thị Xuân, Hai Bà Trưng, Hà Nội
+          </p>
+          <p>
+            <i class="fas fa-building"></i> Văn phòng giao dịch: Tầng 12A, Tòa
+            nhà Vinaconex Diamond (TTTM Chợ Mơ), 459C Bạch Mai, Hà Nội
+          </p>
+          <p>
+            <i class="fas fa-phone-alt"></i> Điện thoại: 024.36227912 - Fax:
+            024.36227913
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Shop SPSP. Tất cả các quyền được bảo hộ.</p>
+      </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script src="checkout.js"></script>
+  </body>
+</html>

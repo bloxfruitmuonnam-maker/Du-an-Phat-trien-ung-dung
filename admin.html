@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPSP - Trang Quản Trị Hệ Thống</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h2>SPSP ADMIN</h2>
+        </div>
+        <ul class="sidebar-menu">
+          <li class="active" onclick="switchTab(event, 'products')">
+            <span>📦</span> Quản lý sản phẩm
+          </li>
+          <li onclick="switchTab(event, 'orders')">
+            <span>🛒</span> Quản lý đơn hàng
+          </li>
+          <li onclick="switchTab(event, 'users')">
+            <span>👥</span> Quản lý người dùng
+          </li>
+          <li>
+            <a href="./sanpham.html" class="link-store">
+              <span>🏪</span> Về trang bán hàng
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="main-wrapper">
+        <header class="admin-header">
+          <div class="header-title">
+            <h3 id="page-title">QUẢN LÝ SẢN PHẨM</h3>
+          </div>
+          <div class="admin-user-info">
+            <span>Xin chào, <strong id="admin-name">ADMIN</strong></span>
+            <button id="btn-admin-logout" class="btn-logout-admin">
+              Đăng xuất
+            </button>
+          </div>
+        </header>
+
+        <main class="admin-content">
+          <section id="tab-products" class="tab-content active">
+            <div class="content-actions">
+              <button class="btn-primary" onclick="openAddModal()">
+                + Thêm sản phẩm mới
+              </button>
+            </div>
+
+            <div class="table-card">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>STT</th>
+                    <th>Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Thương hiệu</th>
+                    <th>Danh mục</th>
+                    <th>Giá bán</th>
+                    <th>Kho</th>
+                    <th>Hành động</th>
+                  </tr>
+                </thead>
+                <tbody id="product-table-body"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="tab-orders" class="tab-content">
+            <div class="table-card">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Mã đơn</th>
+                    <th>Khách hàng</th>
+                    <th>Ngày đặt</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                  </tr>
+                </thead>
+                <tbody id="order-table-body"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="tab-users" class="tab-content">
+            <div class="table-card">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>STT</th>
+                    <th>Tên đăng nhập</th>
+                    <th>Email</th>
+                    <th>Vai trò</th>
+                  </tr>
+                </thead>
+                <tbody id="user-table-body"></tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="modal-product" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeAddModal()">&times;</span>
+        <h2>Thêm Sản Phẩm Mới</h2>
+        <form id="form-add-product" onsubmit="handleSaveProduct(event)">
+          <div class="form-group">
+            <label for="p-name">Tên sản phẩm (*):</label>
+            <input
+              type="text"
+              id="p-name"
+              required
+              placeholder="Nhập tên sản phẩm"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="p-brand">Thương hiệu (*):</label>
+              <input
+                type="text"
+                id="p-brand"
+                required
+                placeholder="VD: Amakirk, Joola"
+              />
+            </div>
+            <div class="form-group">
+              <label for="p-category">Danh mục (*):</label>
+              <select id="p-category" required>
+                <option value="">-- Chọn danh mục --</option>
+                <option value="vot">Vợt</option>
+                <option value="bong">Bóng</option>
+                <option value="giay">Giày</option>
+                <option value="balo">Balo</option>
+                <option value="quan-ao">Quần áo</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="p-price">Giá bán (VNĐ) (*):</label>
+              <input
+                type="number"
+                id="p-price"
+                min="0"
+                required
+                placeholder="3650000"
+              />
+            </div>
+            <div class="form-group">
+              <label for="p-oldPrice">Giá cũ (VNĐ):</label>
+              <input
+                type="number"
+                id="p-oldPrice"
+                min="0"
+                placeholder="0 nếu không giảm"
+              />
+            </div>
+            <div class="form-group">
+              <label for="p-stock">Số lượng kho:</label>
+              <input type="number" id="p-stock" min="0" value="20" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="p-image">URL Hình ảnh Cloudinary (*):</label>
+            <input
+              type="url"
+              id="p-image"
+              required
+              placeholder="https://res.cloudinary.com/..."
+            />
+          </div>
+
+          <div class="form-row align-center">
+            <div class="form-group flex-2">
+              <label for="p-detailUrl">Trang chi tiết:</label>
+              <input
+                type="text"
+                id="p-detailUrl"
+                value="#"
+                placeholder="chitiet1.html"
+              />
+            </div>
+            <div class="form-group checkbox-group flex-1">
+              <label>
+                <input type="checkbox" id="p-isNewArrival" />
+                Hàng mới (New Arrival)
+              </label>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-cancel" onclick="closeAddModal()">
+              Hủy
+            </button>
+            <button type="submit" class="btn-primary">Lưu sản phẩm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
